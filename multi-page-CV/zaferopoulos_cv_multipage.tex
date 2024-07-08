@@ -24,24 +24,7 @@
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
 \documentclass[
-	a4paper,
-	% showframes,
-	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=gray!50,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
-	% itemtextcolor=black!80,
-	% sidebarwidth=0.4\paperwidth,
-	% topbottommargin=0.03\paperheight,
-	% leftrightmargin=20pt,
-	% profilepicsize=4.5cm,
-	% profilepicborderwidth=3.5pt,
-	% profilepicstyle=profilecircle,
-	% profilepiczoom=1.0,
-	% profilepicxshift=0mm,
-	% profilepicyshift=0mm,
-	% profilepicrounding=1.0cm,
+    a4paper,
 ]{fortysecondscv}
 
 % improve word spacing and hyphenation
@@ -53,13 +36,13 @@
 
 % take care of proper font encoding
 \ifxetexorluatex
-	\usepackage{fontspec}
-	\defaultfontfeatures{Ligatures=TeX}
-%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
+%    \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
 \else
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
-%	\usepackage[sfdefault]{noto} % use noto google font
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+%    \usepackage[sfdefault]{noto} % use noto google font
 \fi
 
 % enable mathematical syntax for some symbols like \varnothing
@@ -68,20 +51,20 @@
 % bubble diagram configuration
 \usepackage{smartdiagram}
 \smartdiagramset{
-	% default font size is \large, so adjust to harmonize with sidebar layout
-	bubble center node font = \footnotesize,
-	bubble node font = \footnotesize,
-	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
-	bubble center node size = 0.4\sidebartextwidth,
-	bubble node size = 0.25\sidebartextwidth,
-	distance center/other bubbles = 1.5em,
-	% set center bubble color
-	bubble center node color = maincolor!70,
-	% define the list of colors usable in the diagram
-	set color list = {maincolor!10, maincolor!40,
-	maincolor!20, maincolor!60, maincolor!35},
-	% sets the opacity at which the bubbles are shown
-	bubble fill opacity = 0.8,
+    % default font size is \large, so adjust to harmonize with sidebar layout
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+    bubble center node size = 0.4\sidebartextwidth,
+    bubble node size = 0.25\sidebartextwidth,
+    distance center/other bubbles = 1.5em,
+    % set center bubble color
+    bubble center node color = maincolor!70,
+    % define the list of colors usable in the diagram
+    set color list = {maincolor!10, maincolor!40,
+    maincolor!20, maincolor!60, maincolor!35},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.8,
 }
 
 
@@ -102,117 +85,134 @@
 % date of birth
 \cvbirthday{April 24, 1991}
 % short address/location, use \newline if more than 1 line is required
-\cvaddress{Valestra 99, Heraklion, Greece}
+\cvaddress{Lei 11, Leuven, Belgium}
 % phone number
-\cvphone{+30 694 909 3089}
+\cvphone{+32 456 59 4110}
 % personal website
 \cvsite{https://hariszaf.github.io/}
 % email address
-\cvmail{haris-zaf@hcmr.gr}
+\cvmail{haris.zafeiropoulos@kuleuven.be}
 % pgp key
 % \cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
-% % any other custom entry
-% \cvcustomdata{\faFlag}{Chinese}
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 1st PAGE
 %-------------------------------------------------------------------------------
 % add more profile sections to sidebar on first page
 \addtofrontsidebar{
-	% include gosquare national flags from https://github.com/gosquared/flags;
-	% naming according to ISO 3166-1 alpha-2 country codes
-	\graphicspath{{pics/flags/}}
+    % include gosquare national flags from https://github.com/gosquared/flags;
+    % naming according to ISO 3166-1 alpha-2 country codes
+    \graphicspath{{pics/flags/}}
 
-	% social network accounts incl. proper hyperlinks
-	\profilesection{Social Network}
-		\begin{icontable}{2.5em}{1em}
+    \profilesection{About Me}
+    \aboutme{
+            I am developing bioinformatics approaches to enhance the study of microbial communities and 
+            their backbone: microbial interactions.
+            As a bioinformatician, I have developed tools covering a range of fields: 
+            from metagenomics sequencing analysis to random flux sampling. 
+            My main scientific interests focus on microbial interactions and especially metabolic ones. 
+            I am keen on the ways microbial communities are instructed from their environment and the effect that this structure has back to the environment.
+            In my endeavors, metabolic modeling has been a rather useful arsenal! 
+    }
 
-			\social{\faGithub}
-				{https://github.com/hariszaf}
-				{Github Profile}
-			\social{\faSkype}
-				{haris.zaf2}
-				{haris.zaf2}
-			\social{\faTwitter}
-				{https://twitter.com/haris_zaf}
-				{@haris\_zaf}
+    % social network accounts incl. proper hyperlinks
+    \profilesection{Social Network}
+        \begin{icontable}{2.5em}{1em}
 
-		\end{icontable}
+            \social{\faGithub}
+                {https://github.com/hariszaf}
+                {Github Profile}
 
-	\profilesection{Languages}
-	\pointskill{\flag{GB.png}}{English}{5}
-	\pointskill{\flag{FR.png}}{French}{3}
+            \social{\faSkype}
+                {haris.zaf2}
+                {haris.zaf2}
 
+            \social{\faTwitter}
+                {https://twitter.com/haris_zaf}
+                {@haris\_zaf}
 
-	\profilesection{Coding Skills}
-		\pointskill{\faLinux}{Unix / Linux / AWK}{4}[5]
-		\pointskill{}{Python 3.0}{4}[5]
-		\pointskill{\flag{Matlab_Logo.png}}{Matlab}{3}[5]
-		\pointskill{\textsf{R}}{R / Rstudio}{3}[5]
-		\pointskill{\flag{cpp.png}}{C++}{3}[5]
-		\pointskill{}{HTML / CSS / JS}{3}[5]
-		\pointskill{}{Docker \& Singularity}{4}[5]
-		\pointskill{\faCloudDownload*}{REST API}{4}[5]
+        \end{icontable}
 
-
-	\profilesection{Math and Stats}
-		\pointskill{\faTable}{Linear Algebra}{4}[5]
-		\pointskill{\faCube}{Constraint-based \\    modelling}{3}[5]
+    % Languages
+    \profilesection{Languages}
+        \pointskill{\flag{GB.png}}{English}{5}
+        \pointskill{\flag{FR.png}}{French}{3}
 
 }
-
-
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 2nd PAGE
 %-------------------------------------------------------------------------------
 \addtobacksidebar{
-	\profilesection{About Me}
-	\aboutme{
-            I am studying microbial ecology \& ecosystem functioning by exploiting knowledge aggregation \& data integration techniques.
-            My interests focus on systems biology, metabolic modelling and microbial interactions.
-            
-	}
 
-	\profilesection{My so-far research}
-	\begin{sidebarminipage}
-		\chartlabel{\href{http://pema.hcmr.gr/}{pema}}
-	    \chartlabel{\href{http://prego.hcmr.gr/}{prego}}
-		\chartlabel{\href{https://github.com/hariszaf/darn}{darn}}
-		\chartlabel{\href{https://github.com/GeomScale/dingo}{dingo}}
-	\end{sidebarminipage}
+    % Software
+    \profilesection{Software}
+    \begin{sidebarminipage}
+        \chartlabel{\href{http://pema.hcmr.gr/}{pema}}
+        \chartlabel{\href{http://prego.hcmr.gr/}{prego}}
+        \chartlabel{\href{https://github.com/hariszaf/darn}{darn}}
+        \chartlabel{\href{https://github.com/GeomScale/dingo}{dingo}}
+        \chartlabel{\href{https://hariszaf.github.io/microbetag}{microbetag}}
+    \end{sidebarminipage}
 
+    % Research fields
+    \profilesection{Research fields}
+    \begin{figure}\centering
+        \smartdiagram[bubble diagram]{
+            \textcolor{white}{\textbf{microbial}} \\
+            \textcolor{white}{\textbf{communities}},
+            \textcolor{black!90}{data} \\
+            \textcolor{black!90}{integration},
+            \textcolor{black!90}{metagenomics},
+            \textcolor{black!90}{metabolic} \\
+            \textcolor{black!90}{modeling},
+            \textcolor{black!90}{workflows} \\
+            \textcolor{black!90}{\& HPC}
+        }
+    \end{figure}
 
-	\begin{figure}\centering
-		\smartdiagram[bubble diagram]{
-			\textcolor{white}{\textbf{microbial}} \\
-			\textcolor{white}{\textbf{communities}}, 
-			\textcolor{black!90}{metabarcoding},
-			\textcolor{black!90}{flux sampling},
-			\textcolor{black!90}{HPC},
-			\textcolor{black!90}{omics},
-			\textcolor{black!90}{data} \\
-			\textcolor{black!90}{integration}
-		}
-	\end{figure}
-
-
-	\profilesection{Barskills}
-	\barskill{}{Coding/programming}{80} % \faLaptop
-	\barskill{}{Scientific writing}{70} % \faBookReader
-	\barskill{}{Microbial ecology}{60}  % \faVirus
-
-	\profilesection{Memberships}
-	\begin{memberships}
-		\membership[4em]{pics/mkb.png}{\href{http://www.mikrobiokosmos.org/}{Mikrobiokosmos}}
-		\membership[4em]{pics/isme.png}{\href{https://www.isme-microbes.org/}{International Society of Microbial Ecology}}
-
-	\end{memberships}
+    % Memberships
+    \profilesection{Memberships}
+        \begin{memberships}
+            \membership[4em]{pics/mkb.png}{\href{http://www.mikrobiokosmos.org/}{Mikrobiokosmos}}
+            \membership[4em]{pics/isme.png}{\href{https://www.isme-microbes.org/}{International Society of Microbial Ecology}}
+            \membership[4em]{pics/bsm.png}{\href{https://belsocmicrobio.be}{Belgian Society for Microbiology}}
+        \end{memberships}
 }
 
-
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 3rd PAGE
+%-------------------------------------------------------------------------------
 \addtomoresidebar{
-    \profilesection{My so-far research}
+
+    \profilesection{Coding Skills}
+        \pointskill{\faLinux}{Unix / Linux / AWK}{4}[5]
+        \pointskill{\faPython}{Python 3.0}{4}[5]
+        \pointskill{\flag{pics/flags/Matlab_Logo.png}}{Matlab}{3}[5]
+        \pointskill{\textsf{R}}{R}{3}[5]
+        \pointskill{\flag{pics/flags/cpp.png}}{C++}{2}[5]
+        \pointskill{\faDev}{HTML / CSS / JS}{3}[5]
+        \pointskill{\faDocker}{Docker \& Singularity}{4}[5]
+        \pointskill{\faCloudDownload*}{REST API}{4}[5]
+
+
+    \profilesection{Math and Stats}
+        \pointskill{\faTable}{Linear Algebra}{4}[5]
+        \pointskill{\faCube}{Constraint-based \\    modelling}{3}[5]
+
+
+    \profilesection{Barskills}
+        \barskill{\faVirus}{Microbial ecology}{70}  % \faVirus
+        \barskill{\faCubes}{Metabolic modeling}{70}  % \faVirus
+        \barskill{\faLaptop}{Coding/programming}{80} % \faLaptop
+        \barskill{\faPenNib}{Scientific writing}{70} % \faBookReader
+
 }
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR EMPTY PAGES
+%-------------------------------------------------------------------------------
+\addtoemptysidebar{}
+
 
 
 %-------------------------------------------------------------------------------
@@ -225,21 +225,21 @@
 \cvsection{Research projects - working Experience}
 \begin{cvtable}[3]
 
-	\cvitem{2022 - currently}{\href{https://3domics.eu}{3D'omics}}{Post-doc}
-	{Generate 3D omics landscapes, achieving reconstructions of intestinal host microbiota ecosystems.}
+    \cvitem{2022 - currently}{\href{https://3domics.eu}{3D'omics}}{Post-doc}
+    {Generate 3D omics landscapes, achieving reconstructions of intestinal host microbiota ecosystems.}
 
-	\cvitem{2022 - 2022}{\href{https://imbbc.hcmr.gr/project/eosc-life-gos/}{A workflow for marine Genomic Observatories data analysis}}{Research associate}
-	{Making the large volumes of data produced by genomi observatories more easily interpretable by providing the taxonomic inventories of each sample in a timely manner and in a non-technical format}
+    \cvitem{2022 - 2022}{\href{https://imbbc.hcmr.gr/project/eosc-life-gos/}{A workflow for marine Genomic Observatories data analysis}}{Research associate}
+    {Making the large volumes of data produced by genomic observatories more easily interpretable by providing the taxonomic inventories of each sample in a timely manner and in a non-technical format.}
 
 
-	\cvitem{2018 - 2021}{\href{http://prego.hcmr.gr/}{PREGO: Process, environment, organism (PREGO)}}{PhD}
-	{PREGO is a systems-biology approach to elucidate ecosystem function at the microbial dimension.}
-	
-	\cvitem{2019 -- present}{\href{elixir-greece.org}{ELIXIR–GR}}{technical support}
-	{ELIXIR-GR is the Greek National Node of the ESFRI \href{https://elixir-europe.org/}{European RI ELIXIR}, a distributed e-Infrastructure aiming at the construction of a sustainable European infrastructure for biological information.}
-	
-	\cvitem{2018 - 2020}{\href{https://reconnect.hcmr.gr/}{RECONNECT}}{PhD}
-	{RECONNECT is an Interreg V-B "Balkan-Mediterranean 2014-2020" project. It aims to develop strategies for sustainable management of Marine Protected Areas (MPAs) and Natura 2000 sites.}
+    \cvitem{2018 - 2021}{\href{http://prego.hcmr.gr/}{PREGO: Process, environment, organism (PREGO)}}{PhD}
+    {PREGO is a systems-biology approach to elucidate ecosystem function at the microbial dimension.}
+    
+    \cvitem{2019 -- present}{\href{elixir-greece.org}{ELIXIR–GR}}{technical support}
+    {ELIXIR-GR is the Greek National Node of the ESFRI \href{https://elixir-europe.org/}{European RI ELIXIR}, a distributed e-Infrastructure aiming at the construction of a sustainable European infrastructure for biological information.}
+    
+    \cvitem{2018 - 2020}{\href{https://reconnect.hcmr.gr/}{RECONNECT}}{PhD}
+    {RECONNECT is an Interreg V-B "Balkan-Mediterranean 2014-2020" project. It aims to develop strategies for sustainable management of Marine Protected Areas (MPAs) and Natura 2000 sites.}
 
 \end{cvtable}
 
@@ -248,33 +248,34 @@
 
 \cvsubsection{Graduate studies}
 \begin{cvtable}[1.5]
-	\cvitem{2018 -- 2022}{PhD in Bioinformatics }{\href{https://en.uoc.gr/}{University of Crete}, \href{https://www.biology.uoc.gr/en}{Biology department}}{}
-	\cvitem{}{Dissertation}{\href{https://imbbc.hcmr.gr/}{IMBBC - HCMR}}
-		{\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_7_d_metadata-dlib-1661248925-407543-18532.tkl?language=en}{Microbial communities through the lens of high throughput sequencing, data integration and metabolic networks analysis}}
-	\\
-	\cvitem{2016 -- 2018}{M.Sc. in  Bioinformatics}
-	{\href{https://en.uoc.gr/}{University of Crete}, \href{http://www.english.med.uoc.gr/}{School of Medicine}}
-		{grade: 9.1/10.0}
-	\cvitem{}{Master Thesis}{\href{https://imbbc.hcmr.gr/}{IMBBC - HCMR}}
-	    {\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_2_f_metadata-dlib-1545038085-364284-26948.tkl}{eDNA metabarcoding for biodiversity assessment: Algorithm design and bioinformatics analysis pipeline implementation}}
+    \cvitem{2018 -- 2022}{PhD in Bioinformatics }{\href{https://en.uoc.gr/}{University of Crete}, \href{https://www.biology.uoc.gr/en}{Biology department}}{}
+    \cvitem{}{Dissertation}{\href{https://imbbc.hcmr.gr/}{IMBBC - HCMR}}
+        {\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_7_d_metadata-dlib-1661248925-407543-18532.tkl?language=en}{Microbial communities through the lens of high throughput sequencing, data integration and metabolic networks analysis}}
+    \\
+    \cvitem{2016 -- 2018}{M.Sc. in  Bioinformatics}
+    {\href{https://en.uoc.gr/}{University of Crete}, \href{http://www.english.med.uoc.gr/}{School of Medicine}}
+        {grade: 9.1/10.0}
+    \cvitem{}{Master Thesis}{\href{https://imbbc.hcmr.gr/}{IMBBC - HCMR}}
+        {\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_2_f_metadata-dlib-1545038085-364284-26948.tkl}{eDNA metabarcoding for biodiversity assessment: Algorithm design and bioinformatics analysis pipeline implementation}}
 
 \end{cvtable}
 
 
 \cvsubsection{Undergraduate studies}
-	\begin{cvtable}[1.5]
-		
-	\cvitem{2011 -- 2016}{B.Sc. in Biology}{\href{https://en.uoa.gr/}{National \& Kapodistrian University of Athens} }
-		{grade: 6.2 / 10.0}
-	\cvitem{}{Bachelor Thesis}{\href{https://en.uoa.gr/schools_and_departments/school_of_science/}{School of Science}, \href{http://en.biol.uoa.gr/}{department of Biology}}
-		{Morphology, morphometry and anatomy of species of the genus \textit{Pseudamnicola} in Greece}
-		
+    \begin{cvtable}[1.5]
+        
+    \cvitem{2011 -- 2016}{B.Sc. in Biology}{\href{https://en.uoa.gr/}{National \& Kapodistrian University of Athens} }
+        {grade: 6.2 / 10.0}
+    \cvitem{}{Bachelor Thesis}{\href{https://en.uoa.gr/schools_and_departments/school_of_science/}{School of Science}, \href{http://en.biol.uoa.gr/}{department of Biology}}
+        {Morphology, morphometry and anatomy of species of the genus \textit{Pseudamnicola} in Greece}
+        
 \end{cvtable}
 
 
 %  -----------------------------------------------------------------------
 \newpage
-\makemoresidebar
+\makebacksidebar
+
 %  -----------------------------------------------------------------------
 
 
@@ -286,52 +287,104 @@
 \cvsection{Publications}
 \begin{cvtable}
 
-	\cvpubitem{Metabolic models of human gut microbiota: Advances and challenges.}
-	{Garza, D.R., Gonze, D., \textbf{Zafeiropoulos, H.}, Liu, B. and Faust, K.}
-	{\textit{Cell Systems}, 14(2), pp.109-121., DOI: \href{https://doi.org/10.1016/j.cels.2022.11.002}{10.1016/j.cels.2022.11.002}}
-	{2023}
+    \cvpubitem{dingo: a Python package for metabolic flux sampling}
+    {Chalkis, A., Fisikopoulos, V., Tsigaridas, E. and \textbf{Zafeiropoulos, H.}}
+    {\textit{Bioinformatics Advances}, 
+    % 4(1), p.vbae037., 
+    DOI: \href{https://doi.org/10.1093/bioadv/vbae037}{10.1093/bioadv/vbae037}}
+    {2024} 
+
+    \\
+
+    \cvpubitem{Predicting microbial interactions with approaches based on flux balance analysis: an evaluation.}
+    {Joseph, C., \textbf{Zafeiropoulos, H.}, Bernaerts, K. and Faust, K.}
+    {\textit{BMC Bioinformatics}, 
+    % 25(1), p.36., 
+    DOI: \href{https://doi.org/10.1186/s12859-024-05651-7}{10.1186/s12859-024-05651-7}}
+    {2024}
+
+    \\
+
+    \cvpubitem{Establishing the ELIXIR Microbiome Community}
+    {Finn, R.D., Balech, B., Burgin, J., \textbf{Zafeiropoulos, H.}, Willassen N.P., Pelletier E., Batut B and 18 more}
+    {\textit{F1000Research}, 
+    % 13, pp.ELIXIR-50, 
+    DOI: \href{https://doi.org/10.12688/f1000research.144515.1}{10.12688/f1000research.144515.1}}
+    {2024}
+
+    \\
+
+    \cvpubitem{metaGOflow: a workflow for the analysis of marine Genomic Observatories shotgun metagenomics data}
+    {\textbf{Zafeiropoulos, H.}, Beracochea, M., Ninidakis, S., Exter, K., Potirakis, A., De Moro, G., Richardson, L., Corre, E., Machado, J., Pafilis, E. and Kotoulas, G.}
+    {\textit{GigaScience}, DOI: \href{https://doi.org/10.1093/gigascience/giad078}{10.1093/gigascience/giad078}} {2023}  
+    % 24(5), p.e13847., 
+
+    \\
+
+    \cvpubitem{A pile of pipelines: An overview of the bioinformatics software for metabarcoding data analyses.}
+    {Hakimzadeh, A., Abdala Asbun, A., \textbf{Zafeiropoulos, H.}, Anslan S. and 22 more}
+    {\textit{Molecular Ecology Resources}, 
+    % 24(5), p.e13847., 
+    DOI: \href{https://doi.org/10.1111/1755-0998.13847}{10.1111/1755-0998.13847}}
+    {2023}
+
+    \\
+
+    \cvpubitem{Metabolic models of human gut microbiota: Advances and challenges.}
+    {Garza, D.R., Gonze, D., \textbf{Zafeiropoulos, H.}, Liu, B. and Faust, K.}
+    {\textit{Cell Systems}, 
+    % 14(2), pp.109-121., 
+    DOI: \href{https://doi.org/10.1016/j.cels.2022.11.002}{10.1016/j.cels.2022.11.002}}
+    {2023} 
+
+    \\
 
     \cvpubitem{Deciphering the community structure and the functional potential of a hypersaline marsh microbial mat community.}
-	{Pavloudi, C. and \textbf{Zafeiropoulos, H.} }
-	{\textit{FEMS Microbiology Ecology} 98.12 (2022): fiac141. DOI: \href{https://doi.org/10.1093/femsec/fiac141}{10.1093/femsec/fiac141}}
-	{2022} \\
+    {Pavloudi, C. and \textbf{Zafeiropoulos, H.} }
+    {\textit{FEMS Microbiology Ecology},
+    % 98.12: fiac141. 
+    DOI: \href{https://doi.org/10.1093/femsec/fiac141}{10.1093/femsec/fiac141}}
+    {2022}
 
-	\cvpubitem{Automating the Curation Process of Historical Literature on Marine Biodiversity Using Text Mining: The DECO Workflow.}
-	{Paragkamian, S., Sarafidou, G., Mavraki, D., Pavloudi, C., Beja, J., Eliezer, M., Lipizer, M., Boicenco, L., Vandepitte, L., Perez-Perez, R., \textbf{Zafeiropoulos, H.} and others}
-	{\textit{Frontiers in Marine Science}, 9, p.940844., DOI: \href{https://doi.org/10.3389/fmars.2022.940844}{10.3389/fmars.2022.940844}}
-	{2022} \\
+    \\
+
+    \cvpubitem{Automating the Curation Process of Historical Literature on Marine Biodiversity Using Text Mining: The DECO Workflow.}
+    {Paragkamian, S., Sarafidou, G., Mavraki, D., Pavloudi, C., Beja, J., Eliezer, M., Lipizer, M., Boicenco, L., Vandepitte, L., Perez-Perez, R., \textbf{Zafeiropoulos, H.} and others}
+    {\textit{Frontiers in Marine Science}, 
+    % 9, p.940844., 
+    DOI: \href{https://doi.org/10.3389/fmars.2022.940844}{10.3389/fmars.2022.940844}}
+    {2022} 
+
+    \\
 
     \cvpubitem{PREGO: A Literature and Data-Mining Resource to Associate Microorganisms, Biological Processes, and Environment Types}
-	{\textbf{Zafeiropoulos, H.,} Paragkamian, S., Ninidakis, S., Pavlopoulos, G., A., Jensen, L., J., Pafilis, E. }
-	{\textit{Microorganisms} 10, no. 2 (2022): 293, DOI: \href{10.3390/microorganisms10020293}{10.3390/microorganisms10020293}}
-	{2022} \\
+    {\textbf{Zafeiropoulos, H.,} Paragkamian, S., Ninidakis, S., Pavlopoulos, G., A., Jensen, L., J., Pafilis, E. }
+    {\textit{Microorganisms} 
+    % 10, no. 2 (2022): 293, 
+    DOI: \href{10.3390/microorganisms10020293}{10.3390/microorganisms10020293}}
+    {2022}
 
-	\cvpubitem{The Dark mAtteR iNvestigator (DARN) tool: getting to know the known unknowns in COI amplicon data.}
-	{\textbf{Zafeiropoulos, H.,} Gargan, L., Hintikka, S., Pavloudi, C. \& Carlsson, J.}
-	{\textit{Metabarcoding and Metagenomics}, 5, p.e69657., DOI:\href{https://doi.org/10.3897/mbmg.5.69657}{10.3897/mbmg.5.69657}}
-	{2021} \\
+    \\
 
-	\cvpubitem{0s \& 1s in marine molecular research: a regional HPC perspective}
-	{\textbf{Zafeiropoulos, H.,} Gioti A., Ninidakis S., Potirakis A., ..., \& Pafilis E.}
-	{\textit{GigaScience}, 9(3), p.giab053, DOI: \href{https://doi.org/10.1093/gigascience/giab053}{10.1093/gigascience/giab053}}
-	{2021} \\
+    \cvpubitem{The Dark mAtteR iNvestigator (DARN) tool: getting to know the known unknowns in COI amplicon data.}
+    {\textbf{Zafeiropoulos, H.,} Gargan, L., Hintikka, S., Pavloudi, C. \& Carlsson, J.}
+    {\textit{Metabarcoding and Metagenomics}, 
+    % 5, p.e69657., 
+    DOI:\href{https://doi.org/10.3897/mbmg.5.69657}{10.3897/mbmg.5.69657}}
+    {2021}
 
-    \cvpubitem{Geometric Algorithms for Sampling the Flux Space of Metabolic Networks}
-	{Chalkis, A., Fisikopoulos, V., Tsigaridas, E. \& \textbf{Zafeiropoulos, H.}}
-	{\textit{37th International Symposium on Computational Geometry (SoCG 2021)}, 21:1--21:16, 189, DOI: \href{https://doi.org/10.4230/LIPIcs.SoCG.2021.21}{10.4230/LIPIcs.SoCG.2021.21}}
-	{2021} \\
+    \\
 
-	\cvpubitem{The Santorini Volcanic Complex as a Valuable Source of Enzymes for Bioenergy}
-	{Polymenakou, P.N., Nomikou, P., \textbf{Zafeiropoulos, H.}, Mandalakis, M., Anastasiou, T.I., Kilias, S., Kyrpides, N.C., Kotoulas, G. \& Magoulas,A.}
-	{\textit{Energies}, 14(5), p.1414.}{2021} \\
+    \cvpubitem{0s \& 1s in marine molecular research: a regional HPC perspective}
+    {\textbf{Zafeiropoulos, H.,} Gioti A., Ninidakis S., Potirakis A., ..., \& Pafilis E.}
+    {\textit{GigaScience}, 
+    % 9(3), p.giab053, 
+    DOI: \href{https://doi.org/10.1093/gigascience/giab053}{10.1093/gigascience/giab053}}
+    {2021}
 
-	\cvpubitem{PEMA: a flexible Pipeline for Environmental DNA Metabarcoding Analysis of the 16S/18S ribosomal RNA, ITS \& COI marker genes}{\textbf{Zafeiropoulos, H.}, Viet, H.Q., Vasileiadou, K., Potirakis, A., Arvanitidis, C., Topalis, P., Pavloudi, C. \& Pafilis, E}
-	{\textit{GigaScience}, 9(3), p.giaa022, DOI:\href{https://doi.org/10.1093/gigascience/giaa022}{10.1093/gigascience/giaa022}}{2020}
-	
+    \\
+
 \end{cvtable}
-
-
-
 
 %  -----------------------------------------------------------------------
 \newpage
@@ -339,68 +392,135 @@
 %  -----------------------------------------------------------------------
 
 % ------------------------------------------------------------------------
-%                            PRESENTATIONS
+%                            PUBLICATIONS (p2)
 % ------------------------------------------------------------------------
+
+\begin{cvtable}
+
+
+    \cvpubitem{Geometric Algorithms for Sampling the Flux Space of Metabolic Networks}
+    {Chalkis, A., Fisikopoulos, V., Tsigaridas, E. \& \textbf{Zafeiropoulos, H.}}
+    {\textit{37th International Symposium on Computational Geometry (SoCG 2021)}, 
+    % 21:1--21:16, 189, 
+    DOI: \href{https://doi.org/10.4230/LIPIcs.SoCG.2021.21}{10.4230/LIPIcs.SoCG.2021.21}}
+    {2021}
+
+    \\
+
+    \cvpubitem{The Santorini Volcanic Complex as a Valuable Source of Enzymes for Bioenergy}
+    {Polymenakou, P.N., Nomikou, P., \textbf{Zafeiropoulos, H.}, Mandalakis, M., Anastasiou, T.I., Kilias, S., Kyrpides, N.C., Kotoulas, G. \& Magoulas,A.}
+    {\textit{Energies}, 
+    % 14(5), p.1414.
+    DOI: \href{https://doi.org/10.3390/en14051414}{10.3390/en14051414}
+    }{2021}
+
+    \\
+
+    \cvpubitem{PEMA: a flexible Pipeline for Environmental DNA Metabarcoding Analysis of the 16S/18S ribosomal RNA, ITS \& COI marker genes}{\textbf{Zafeiropoulos, H.}, Viet, H.Q., Vasileiadou, K., Potirakis, A., Arvanitidis, C., Topalis, P., Pavloudi, C. \& Pafilis, E}
+    {\textit{GigaScience}, 
+    % 9(3), p.giaa022, 
+    DOI:\href{https://doi.org/10.1093/gigascience/giaa022}{10.1093/gigascience/giaa022}}{2020}
+
+    \\
+    \hline \\
+
+    \cvpubitem{Improving genome-scale metabolic models of incomplete genomes with deep learning}{
+        Boer, M.D., Melkonian, C., \textbf{Zafeiropoulos, H.}, Haas, A.F., Garza, D. and Dutilh, B.E.
+    }
+    {\textbf{under revision in}~\textit{iScience}, \href{https://doi.org/10.1101/2023.07.10.548314}{\textit{bioRxiv}}}{2024}
+
+    \\
+    
+    \cvpubitem{microbetag: simplifying microbial network interpretation through annotation, enrichment tests \& metabolic complementarity analysis}{
+        \textbf{Zafeiropoulos, H.}, Delopoulos, E.I.M., Erega, A., Geirnaert, A., Morris, J. and Faust, K.
+    }{\textbf{under review in}~\textit{Microbiome}}{2024}
+
+    \\
+
+    \cvpubitem{A long-term ecological research data set from the marine genetic monitoring programme ARMS-MBON 2018-2020}{
+        Daraghmeh, N., .. \textbf{Zafeiropoulos, H.}.. Pavloudi, C., and Matthias O. and 37 more
+    }
+    {\textbf{under review in}~\textit{Molecular Ecology Resources}}{2024}
+
+
+\end{cvtable}
+
+
+%  -----------------------------------------------------------------------
+\newpage
+\makeemptysidebar
+
+% -----------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+%                    CONFERENCES & SUMMER SCHOOLS
+% ------------------------------------------------------------------------
+
 
 
 \cvsection{Conferences}
 \begin{cvtable}
 
 
-	
-
-	\cvitem{2022}{1st Applied HoloGenomics conference @ Bilbao, Spain}
-    	{\href{https://appliedhologenomicsconference.eu}{AHC2022}}
-	    {\textit{Poster presentation} \\ \texttt{microbetag}: a microbial co-occurrence network annotator}{}
-
-    \\
-
-	\cvitem{2022}{18th International Symposium on Microbial Ecology @ Laussane, Switzerland}
-    	{\href{https://isme18.isme-microbes.org}{ISME18}}
-	    {\textit{Poster presentation} \\ Reverse ecology and systems biology approaches to identify key processes ensuring life in extreme environments}{}
+    \cvitem{2024}{Belgian Society for Microbiology: Annual Symposium @ Brussels, Belgium}
+    {\href{https://belsocmicrobio.be/events/annual-symposium-2024/}{BSM2024}}
+    {\textit{Poster presentation:} \texttt{microbetag}: simplifying microbial network interpretation through annotation, enrichment and metabolic complementarity analysis
+    }{}
 
     \\
 
+    \cvitem{2022}{1st Applied HoloGenomics conference @ Bilbao, Spain}
+        {\href{https://appliedhologenomicsconference.eu}{AHC2022}}
+        {\textit{Poster presentation:} \texttt{microbetag}: a microbial co-occurrence network annotator}{}
 
-	\cvitem{2021}{Bioinformatics Open Source Conference \\ (BOSC) - online}
-    	{\href{https://www.open-bio.org/events/bosc-2021/}{BOSC2021}}
-	    {\textit{Flash talk} \\ \texttt{dingo}: A python library for metabolic networks sampling \& analysis.)}{}
+    \\
+
+    \cvitem{2022}{18th International Symposium on Microbial Ecology @ Laussane, Switzerland}
+        {\href{https://isme18.isme-microbes.org}{ISME18}}
+        {\textit{Poster presentation:} Reverse ecology and systems biology approaches to identify key processes ensuring life in extreme environments}{}
+
+    \\
+
+
+    \cvitem{2021}{Bioinformatics Open Source Conference \\ (BOSC) - online}
+        {\href{https://www.open-bio.org/events/bosc-2021/}{BOSC2021}}
+        {\textit{Flash talk:} \texttt{dingo}: A python library for metabolic networks sampling \& analysis.)}{}
 
     \\
     
-	\cvitem{2021}{1st DNAQUA International Conference - online}
-    	{\href{https://symposium.inrae.fr/dnaqua-conference-evian2021/}{DNAQUA}}
-	    {\textit{Flash talk} \\ PEMA v2: addressing metabarcoding bioinformatics analysis challenges}{}
-	    
-	\\
+    \cvitem{2021}{1st DNAQUA International Conference - online}
+        {\href{https://symposium.inrae.fr/dnaqua-conference-evian2021/}{DNAQUA}}
+        {\textit{Flash talk:} PEMA v2: addressing metabarcoding bioinformatics analysis challenges}{}
+        
+    \\
 
-	\cvitem{2020}{Federation of European Microbiological \\ Societies (FEMS) - online}
-    	{\href{https://fems2020belgrade.com/}{FEMS2020}}
-	    {\textit{Flash talk} \\ Mining literature and -omics (meta)data to associate microorganisms, biological processes and environment types}{}
+    \cvitem{2020}{Federation of European Microbiological \\ Societies (FEMS) - online}
+        {\href{https://fems2020belgrade.com/}{FEMS2020}}
+        {\textit{Flash talk:} Mining literature and -omics (meta)data to associate microorganisms, biological processes and environment types}{}
 
     \\
 
-	\cvitem{2020}{PyData Global - online}
-    	{\href{https://pydata.org/global2020/}{PyData2020}}
-	    {\textit{Oral presentation} \\ \href{https://www.youtube.com/watch?v=zg8KFZ_LbHM&t=1s}{Geometric and statistical methods in systems biology: the case of metabolic networks}}{}
+    \cvitem{2020}{PyData Global - online}
+        {\href{https://pydata.org/global2020/}{PyData2020}}
+        {\textit{Oral presentation:} \href{https://www.youtube.com/watch?v=zg8KFZ_LbHM&t=1s}{Geometric and statistical methods in systems biology: the case of metabolic networks}}{}
 
     \\
 
     \cvitem{2019}{network2019: 4th Symposium on Ecological Networks @ Paris, France}
-    	{\href{https://network2019.sciencesconf.org}{network2019}}
-    	{Participation.}{}
+        {\href{https://network2019.sciencesconf.org}{network2019}}
+        {Participation.}{}
 
-	\\
+    \\
     
     \cvitem{2019}{8th International Barcode of Life Conference @ Trondheim, Norway}
-    	{\href{http://dnabarcodes2019.org/}{iBOL}}
-    	{\textit{ePoster presentation} \\ \href{}{P.E.M.A.: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
+        {\href{http://dnabarcodes2019.org/}{iBOL}}
+        {\textit{ePoster presentation:} \href{}{P.E.M.A.: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
 
-	\\
+    \\
 
-	\cvitem{2018}{European Conference on Computational Biology (ECCB) 2018 @ Athens, Greece}
-    	{\href{https://www.iscb.org/cms_addon/events/details.php?uid=2508}{ECCB18}}
-    	{\textit{Poster presentation} \\ \href{}{P.E.M.A.: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
+    \cvitem{2018}{European Conference on Computational Biology (ECCB) 2018 @ Athens, Greece}
+        {\href{https://www.iscb.org/cms_addon/events/details.php?uid=2508}{ECCB18}}
+        {\textit{Poster presentation:} \href{}{P.E.M.A.: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
 
 
 
@@ -408,146 +528,232 @@
 
 
 
-
-
-
-\cvsection{Workshops}
+\cvsection{Workshops \& Summer schools}
 \begin{cvtable}
 
-	\cvitem{2022}{Microbial communities: current approaches and open challenges}
-    	{\href{https://www.newton.ac.uk/event/umcw06/}{UMCW06}}
-    	{Participant}{}
 
-	\cvitem{2021}{Microbiome Data Analyses Workshop Online}
-    	{\href{https://meetinghand.com/e/mdawo}{MDAWO}}
-    	{\textbf{Tutorial:} PEMA: a flexible Pipeline for Environmental DNA Metabarcoding Analysis of the 16S/18S rRNA, ITS and COI marker genes.}{}
+    \cvitem{2023}{Economic Principles in Cell Physiology @ Paris, France}
+        {\href{https://appliedhologenomicsconference.eu}{EPCP2023}}
+        {Mathematical modeling of cellular systems and “resource allocation thinking”. 
+        \textit{Poster presentation: \\ "sampl'em all"}: exploring potential flux sampling applications}{}
+    \\
+    \cvitem{2022}{Microbial communities: current approaches and open challenges}
+        {\href{https://www.newton.ac.uk/event/umcw06/}{UMCW06}}
+        {Interdisciplinary exchanges in microbial communities' research and the emerging challenge areas.}{}
+    \\
 
-	
+    \cvitem{2022}{ELIXIR Fluxomics Training School 2021}
+    {\href{https://tess.elixir-europe.org/events/elixir-fluxomics-training-school-2021}{ELIXFLUX}}
+    {An introduction to the field of fluxomics and the experimental and computational methods used to estimate and predict metabolic fluxes}{}
+
+    \\
+
+    \cvitem{2020}{ Metagenomics, Metatranscript- omics and multi 'omics for microbial community studies}
+    {\href{https://docs.google.com/spreadsheets/d/1YwJWejTxh7FLfooKCEJ18QCqvkYKAe5jFtwqQ7qU7bI/edit?gid=674784997\#gid=674784997}{material}}
+    {A Physalia Course from Prof. Dr. Curtis Huttenhower}{}
+
+        
+
 
 \end{cvtable}
+
+
 %  -----------------------------------------------------------------------
 \newpage
-\makebacksidebar
+\makeemptysidebar
 %  -----------------------------------------------------------------------
 
+% ------------------------------------------------------------------------
+%                    TEACHING & SUPERVISION
+% ------------------------------------------------------------------------
 
-\cvsection{Teaching - Supervision}
+
+\cvsection{Supervision}
 \begin{cvtable}
 
-	\cvitem{2023}{"Development of a Cytoscape App for microbe-microbe association networks"}
-	{\href{https://summerofcode.withgoogle.com/programs/2023/projects/7IKSInMx}{post}}
-	{Google Summer of Code mentor}{}\\
 
-	\cvitem{2023}{eDNA metabarcoding, pipeline development \& high performance computing}
-	{\href{https://docs.google.com/presentation/d/1FSObXaOt0HFq30UBypO4ui13oy1cbflxLRQJPQwfjC4/edit?usp=sharing}{slides}}
-	{Lecture on MSc "Applied Bioinformatics \& Data Analysis" in [\href{https://bioinfo.mbg.duth.gr}{Democritus University of Thrace}, Greece}{}\\
-
-	\cvitem{2022}{Genome-scale model reconstruction}
-	{\href{https://colab.research.google.com/drive/1uL-oiSNAQoAL1qWyS4z_y94kWhHyT4hA?usp=sharing}{GColab notebook}}
-	{Lectures on "Master en bioinformatique et modélisation" of the~\href{https://www.ulb.be/fr/programme/ma-binf}{Université Libre de Bruxelles}.}{}\\
-
-	\cvitem{2020}{Environmental DNA \& DNA metabarcoding}
-	{\href{https://docs.google.com/presentation/d/19TVFO3Rw-1owvrqVdzmUzQUrYHZ1Vaw4ctVjBso-n-E/edit?usp=sharing}{slides}}
-	{Lecture on MSc "Environmenta Biology" in~\href{http://envbio.biology.uoc.gr}{University of Crete}.}{}
+    \cvitem{ongoing}{Andrey Radev, MSc student @ Bioinformatics KU Leuven}
+    {\href{}{post}}
+    {Visualisation and analysis of microbial growth data to facilitate interactions investigation and interactions' strength assessment}{}\\
 
 
-	% \cvitem
+    \cvitem{ongoing}{Anna Voukouna, MSc student @ Bionformatics DUTH, Greece}
+    {\href{}{post}}
+    {Investigation of microbial metabolic interactions potential across the Genome Taxonomy Database representative genomes
+    }{}\\
+
+
+    \cvitem{ongoing}{Sotiris Touliopoulos, Google Summer of Code 2024 with GeomScale org.}
+    {\href{https://sotiristouliopoulos.github.io/dingo/}{post}}
+    {Pre- and post-sampling features to leverage flux sampling at both the strain and the community level}{}\\
+
+    \cvitem{2023-2024}{Sofia Monsalve Duarte, MSc student @ Bioinformatics KU Leuven}
+    {\href{}{thesis}}
+    {"Creation and implementation of a database interface for the collection and analysis of microbial growth data"}{}\\
+
+    \cvitem{2023}{Ermis Ioannis Michail Delopoulos, Google Summer of Code 2023 with NRNB org.}
+    {\href{https://ermismd.github.io/MGG/}{post}}
+    {Development of a Cytoscape App for microbe-microbe association networks
+    }{}\\
+
+    \cvitem{2022-2024}{Ermis Ioannis Michail Delopoulos, MSc student @ Bioinformatics KU Leuven}
+    {\href{}{thesis}}
+    {"Development of a graphical user interface for microbetag"
+    }\\
+
+    \cvitem{2022-2023}{Julia Casado Gómez-Pallete, MSc student @ Bioinformatics KU Leuven}
+    {\href{https://kuleuven.limo.libis.be/discovery/fulldisplay?docid=alma9993527122501488&context=L&vid=32KUL_KUL:KULeuven&search_scope=All_Content&tab=all_content_tab&lang=en}{thesis}}
+    {"Development of a database for human gut bacterial growth curves"
+    }\\
 
 
 \end{cvtable}
 
 
+
+\cvsection{Teaching}
+\begin{cvtable}
+
+    \cvitem{2024}{Exploring the microbiome with high-throughput sequencing technologies: a bioinformatics perspective (part II)}
+    {\href{https://docs.google.com/presentation/d/1jNNGnUWEOk40eIGnJemGaThLcbmtyydaWyJZtGpLj7w/edit?usp=sharing}{slides}}
+    {Lecture on MSc "Applied Bioinformatics \& Data Analysis" in \href{https://bioinfo.mbg.duth.gr}{Democritus University of Thrace}, Greece}{}\\
+
+
+    \cvitem{2024}{Exploring the microbiome with high-throughput sequencing technologies: a bioinformatics perspective}
+    {\href{https://docs.google.com/presentation/d/1ur_r9DRvZInixYkgDDYZNmVHH9mr15BKlIoVoCiyzhc/edit?usp=sharing}{slides}}
+    {Lecture on MSc "Applied Bioinformatics \& Data Analysis" in \href{https://bioinfo.mbg.duth.gr}{Democritus University of Thrace}, Greece}{}\\
+
+    \cvitem{2023}{eDNA metabarcoding, pipeline development \& high performance computing}
+    {\href{https://docs.google.com/presentation/d/1FSObXaOt0HFq30UBypO4ui13oy1cbflxLRQJPQwfjC4/edit?usp=sharing}{slides}}
+    {Lecture on MSc "Applied Bioinformatics \& Data Analysis" in \href{https://bioinfo.mbg.duth.gr}{Democritus University of Thrace}, Greece}{}\\
+
+    \cvitem{2023}{eDNA metabarcoding, pipeline development \& high performance computing}
+    {\href{https://docs.google.com/presentation/d/1FSObXaOt0HFq30UBypO4ui13oy1cbflxLRQJPQwfjC4/edit?usp=sharing}{slides}}
+    {Lecture on MSc "Applied Bioinformatics \& Data Analysis" in \href{https://bioinfo.mbg.duth.gr}{Democritus University of Thrace}, Greece}{}\\
+
+    \cvitem{2022}{Genome-scale model reconstruction}
+    {\href{https://colab.research.google.com/drive/1uL-oiSNAQoAL1qWyS4z_y94kWhHyT4hA?usp=sharing}{GColab notebook}}
+    {Lectures on "Master en bioinformatique et modélisation" of the~\href{https://www.ulb.be/fr/programme/ma-binf}{Université Libre de Bruxelles}.}{}\\
+
+    \cvitem{2021}{Microbiome Data Analyses Workshop Online}
+    {\href{https://meetinghand.com/e/mdawo}{MDAWO}}
+    {\textbf{Tutorial:} PEMA: a flexible Pipeline for Environmental DNA Metabarcoding Analysis of the 16S/18S rRNA, ITS and COI marker genes.}{}
+
+    \cvitem{2020}{Environmental DNA \& DNA metabarcoding}
+    {\href{https://docs.google.com/presentation/d/19TVFO3Rw-1owvrqVdzmUzQUrYHZ1Vaw4ctVjBso-n-E/edit?usp=sharing}{slides}}
+    {Lecture on MSc "Environmenta Biology" in~\href{http://envbio.biology.uoc.gr}{University of Crete}.}{}
+
+
+
+
+    % \cvitem
+
+
+\end{cvtable}
+
+
+
+%  -----------------------------------------------------------------------
+\newpage
+\makeemptysidebar
+%  -----------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------
+%                           AWARDS & REFS
+% ------------------------------------------------------------------------
 
 \cvsection{Awards}
 \begin{cvtable}
 
-	\cvitem{2021}{Google Summer of Code}
-	{\href{https://summerofcode.withgoogle.com/}{GSoC}}
-	{Project title: \textit{\href{https://hariszaf.github.io/gsoc2021/}
-	{From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes}}}{}
+    \cvitem{2021}{Google Summer of Code}
+    {\href{https://summerofcode.withgoogle.com/}{GSoC}}
+    {Project title: \textit{\href{https://hariszaf.github.io/gsoc2021/}
+    {From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes}}}{}
 
     \\
 
-	\cvitem{2021}{European Molecular Biology Organization Short-Term Fellowship}
-	{\href{https://www.embo.org/}{EMBO}}
-	{Project title: \textit{"Exploiting data integration, text-mining and computational geometry to enhance microbial interactions inference from  co-occurrence networks"}}{}
+    \cvitem{2021}{European Molecular Biology Organization Short-Term Fellowship}
+    {\href{https://www.embo.org/}{EMBO}}
+    {Project title: \textit{"Exploiting data integration, text-mining and computational geometry to enhance microbial interactions inference from  co-occurrence networks"}}{}
 
     \\
 
-	\cvitem{2020}{Federation of European Microbiological Societies \\ Meeting Attendance Grant}
-	{\href{https://fems-microbiology.org/}{FEMS}}
-	{for joining the \textit{"Metagenomics, Metatranscript- omics and \\ 
-	multi ’omics for microbial community studies"} Physalia course}{}
+    \cvitem{2020}{Federation of European Microbiological Societies \\ Meeting Attendance Grant}
+    {\href{https://fems-microbiology.org/}{FEMS}}
+    {for joining the \textit{"Metagenomics, Metatranscript- omics and \\ 
+    multi ’omics for microbial community studies"} Physalia course}{}
 
     \\
     
-	\cvitem{2019}{Short Term Scientific Mission (STSM) \\ @ DNAqua-net COST action}
-	{\href{http://dnaqua.net/}{DNAqua-net}}
-	{Project title \textit{A comparison of bioinformatic pipelines and sampling techniques to enable benchmarking of DNA metabarcoding}. \href{http://dnaqua.net/wp-content/uploads/2019/08/Zafeiropoulos.pdf}{Report.}}{}
+    \cvitem{2019}{Short Term Scientific Mission (STSM) \\ @ DNAqua-net COST action}
+    {\href{http://dnaqua.net/}{DNAqua-net}}
+    {Project title \textit{A comparison of bioinformatic pipelines and sampling techniques to enable benchmarking of DNA metabarcoding}. \href{http://dnaqua.net/wp-content/uploads/2019/08/Zafeiropoulos.pdf}{Report.}}{}
 
 
     \\
-	
-	\cvitem{2018}{Best Poster Award @ Hellenic Bioinformatics conference}
-	{\href{https://hscbio.wordpress.com/}{HBIO}}
-	{for \textit{PEMA: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
-	
+    
+    \cvitem{2018}{Best Poster Award @ Hellenic Bioinformatics conference}
+    {\href{https://hscbio.wordpress.com/}{HBIO}}
+    {for \textit{PEMA: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
+    
 \end{cvtable}
+
 
 
 \cvsection{References}
 \begin{cvtable}
 
 
-	\cvitemshort{\href{http://msysbiology.com}{Karoline Faust}}
-	    {Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven
-	    Leuven, 3000, Leuven, Belgium
-	    \\ 
-	    \faPhone: +3216322698 | 
-	    \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}}
-	  
-	\\ 
+    \cvitemshort{\href{http://msysbiology.com}{Karoline Faust}}
+        {Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven
+        Leuven, 3000, Leuven, Belgium
+        \\ 
+        \faPhone: +3216322698 | 
+        \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}}
+      
+    \\ 
 
 
-	\cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
-	    {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
-	   % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
-	    ),
-	    Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
-	    \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
-	    
-	\\
-	  
-	% \cvitemshort{\href{https://ladoukakis.weebly.com/}{Emmanuel D. Ladoukakis}}
-	%     {Biology Department, University of Crete,
-	%     Voutes University Campus, Iraklio, GR 70013 Biology building, 3rd floor, Office: 316a 
-	%     \\ 
-	%     \faPhone: +30 2810394067 | 
-	%     \faAt: \href{mailto:ladoukakis@biology.uoc.gr}{ladoukakis@biology.uoc.gr}}
-	  
-	% \\ 
+    \cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
+        {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
+       % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
+        ),
+        Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
+        \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
+        
+    \\
+      
+    % \cvitemshort{\href{https://ladoukakis.weebly.com/}{Emmanuel D. Ladoukakis}}
+    %     {Biology Department, University of Crete,
+    %     Voutes University Campus, Iraklio, GR 70013 Biology building, 3rd floor, Office: 316a 
+    %     \\ 
+    %     \faPhone: +30 2810394067 | 
+    %     \faAt: \href{mailto:ladoukakis@biology.uoc.gr}{ladoukakis@biology.uoc.gr}}
+      
+    % \\ 
 
     
-	\cvitemshort{\href{https://who.paris.inria.fr/Elias.Tsigaridas/}{Elias Tsigaridas}}
-	    {Institut de Mathématiques de Jussieu - Paris Rive Gauche, Sorbonne Université - Campus Pierre et Marie Curie, Case courrier 247, 4, place Jussieu, 75252, Paris Cedex 05, France \\ 
-	    \faPhone: +33 014427 8539 | \faAt: \href{mailto: elias.tsigaridas@inria.fr}{elias.tsigaridas@inria.fr}}
+    \cvitemshort{\href{https://who.paris.inria.fr/Elias.Tsigaridas/}{Elias Tsigaridas}}
+        {Institut de Mathématiques de Jussieu - Paris Rive Gauche, Sorbonne Université - Campus Pierre et Marie Curie, Case courrier 247, 4, place Jussieu, 75252, Paris Cedex 05, France \\ 
+        \faPhone: +33 014427 8539 | \faAt: \href{mailto: elias.tsigaridas@inria.fr}{elias.tsigaridas@inria.fr}}
 
     \\
 
-	\cvitemshort{\href{http://computational-genomics.weebly.com/}{Christoforos Nikolaou}}
-	    {Department of Biology, University of Crete, Gennimata 34,71305, Heraklion, Crete, Greece \\ 
-	    \faAt: \href{mailto:cnikolaou@fleming.gr}{cnikolaou@fleming.gr}}
+
+    \cvitemshort{\href{https://imbbc.hcmr.gr/user/kotoulas/}{Georgios Kotoulas}}
+        {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR) \\
+        Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
+        \faAt: \href{mailto:kotoulas@hcmr.gr}{kotoulas@hcmr.gr}} 
+
+
+    % \cvitemshort{\href{http://computational-genomics.weebly.com/}{Christoforos Nikolaou}}
+    %     {Department of Biology, University of Crete, Gennimata 34,71305, Heraklion, Crete, Greece \\ 
+    %     \faAt: \href{mailto:cnikolaou@fleming.gr}{cnikolaou@fleming.gr}}
 
 
 \end{cvtable}
 
-
-
-
-
-%  -----------------------------------------------------------------------
-% \newpage
-%  -----------------------------------------------------------------------
 
 
 \end{document}

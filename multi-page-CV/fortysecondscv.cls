@@ -181,12 +181,9 @@
 \fi
 
 % pictures, icons and drawings
-\ifxetexorluatex
-	\RequirePackage{fontawesome5}
-	\RequirePackage{academicons}
-\else
-	\RequirePackage{fontawesome}
-\fi
+\RequirePackage{fontawesome5}
+\RequirePackage{academicons}
+
 \RequirePackage{tikz}
 \usetikzlibrary{arrows, backgrounds}
 
@@ -587,6 +584,9 @@
 \newcommand{\addtobacksidebar}[1]{\apptocmd{\backsidebar}{#1}{}{}}
 \newcommand{\moresidebar}{}
 \newcommand{\addtomoresidebar}[1]{\apptocmd{\moresidebar}{#1}{}{}}
+\newcommand{\emptysidebar}{}
+\newcommand{\addtoemptysidebar}[1]{\apptocmd{\emptysidebar}{#1}{}{}}
+
 
 \newcommand{\makefrontsidebar}{%
 	\begin{sidebar}
@@ -636,6 +636,21 @@
 		\moresidebar
 	\end{sidebar}
 }
+
+
+\newcommand{\makeemptysidebar}{%
+	\begin{sidebar}
+		% begin with name instead of picture
+		\nameandjob
+
+		% make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+
+		% user definitions
+		\emptysidebar
+	\end{sidebar}
+}
+
 
 
 %-------------------------------------------------------------------------------
