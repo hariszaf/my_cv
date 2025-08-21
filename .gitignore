@@ -5,3 +5,6 @@
 *.fdb_latexmk
 *.xdv
 *.out
+
+.vscode/
+cover-letters/main.pdf
