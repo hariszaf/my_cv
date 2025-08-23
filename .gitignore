@@ -5,6 +5,11 @@
 *.fdb_latexmk
 *.xdv
 *.out
+*.bbl
+*.bcg
+*.blg
+*.bcf
+*.xml
 
 .vscode/
 cover-letters/main.pdf

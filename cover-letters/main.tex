@@ -4,26 +4,62 @@
 % To compile the letter of your choice, replace the `body' (line 70) with the name of the letter file you want to use.
 
 \documentclass[12pt]{letter}
+
+
 \usepackage[utf8]{inputenc}
 \usepackage[empty]{fullpage}
+\usepackage{url}       % if your style prints URLs/DOIs
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{fontawesome5}
 \usepackage{eso-pic}
 \usepackage{charter}
 \usepackage{needspace}
-\addtolength{\topmargin}{-0.7in}
-\addtolength{\textheight}{1.0in}
+\usepackage{fancyhdr}
+
+\usepackage[backend=biber,style=nature]{biblatex}
+\addbibresource{references.bib}
+\defbibheading{bibliography}{} % no heading for bibliography
+
+% \addtolength{\topmargin}{-0.7in}
+% \addtolength{\textheight}{1.0in}
+\usepackage[
+  top=1.3in, bottom=1in, left=1in, right=1in,
+  headheight=50pt, headsep=20pt
+]{geometry}
+
+
+
 % \usepackage[top=1.8in, bottom=1in, left=1in, right=1in]{geometry}
 \definecolor{gr}{RGB}{225,225,225}
 
-\usepackage{fancyhdr}
+% % ===== HEADER SETUP =====
+% \pagestyle{fancy}
+% \fancyhf{} % Clear all header/footer
+% \setlength{\headheight}{50pt} % Increase if needed
 
-% ===== HEADER SETUP =====
-\pagestyle{fancy}
-\fancyhf{} % Clear all header/footer
-\setlength{\headheight}{50pt} % Increase if needed
+% \fancyhead[C]{%
+%   \begin{minipage}{\textwidth}
+%     \centering
+%     {\fontsize{20}{13}\selectfont\textsc{\myname}}\\
+%     \vspace*{0.05in}
+%     {\fontsize{11}{11}\selectfont 
+%         \href{mailto:\myemail}{\faEnvelope\ \myemail} \hfill
+%         \href{\gitbase\mygithub}{\faGithub\ \mygithub} \hfill
+%         \href{\https\mypage}{\faGlobe\ \mypage} \hfill
+%         \href{\orcidbase\myorcid}{\faOrcid\ \myorcid}
+%     }
+%   \end{minipage}
+% }
 
+
+% Shaded banner background
+\AddToShipoutPictureBG{%
+    \color{gr}
+    \AtPageUpperLeft{\rule[-1.3in]{\paperwidth}{1.3in}}
+}
+
+% Header content
 \fancyhead[C]{%
   \begin{minipage}{\textwidth}
     \centering
@@ -32,54 +68,80 @@
     {\fontsize{11}{11}\selectfont 
         \href{mailto:\myemail}{\faEnvelope\ \myemail} \hfill
         \href{\gitbase\mygithub}{\faGithub\ \mygithub} \hfill
-        \href{\mypage}{\faGlobe\ \mypage} \hfill
+        \href{\https\mypage}{\faGlobe\ \mypage} \hfill
         \href{\orcidbase\myorcid}{\faOrcid\ \myorcid}
     }
   \end{minipage}
 }
 
+% Add space or reserved empty slot before the headrule
+\makeatletter
+\renewcommand{\headrule}{%
+  \vspace{0.05pt} % <-- extra vertical gap before rule
+  \hrule height 0.4pt \@width\headwidth \vspace{-1pt}%
+  \makebox[2cm]{}% <-- reserved empty space (visible in header, not printed)
+}
+\makeatother
+\pagestyle{fancy}
+
+
+
+
+
 \input{info}
-
-
 
 \begin{document}
 
-    % Shaded header banner
-    \AddToShipoutPictureBG{%
-        \color{gr}
-        \AtPageUpperLeft{\rule[-1.3in]{\paperwidth}{1.3in}}
-    }
+    % % Shaded header banner
+    % \AddToShipoutPictureBG{%
+    %     \color{gr}
+    %     \AtPageUpperLeft{\rule[-1.3in]{\paperwidth}{1.3in}}
+    %       \makebox[2cm]{} 
+    % }
 
     % Add space to push content down, below the grey box  -- this works for the first page only!
     \vspace*{0.2in}   % \newpage\vspace*{0.21in} when you wish to change page
 
-    % Opening block
-    \hfill \today \\
-    \recipient \\
-    \company \\
-    \street \\
-    % \city, \state\ \zip\\
+    % % Opening block
+    % \hfill 
+    % \today \\
+    % \recipient \\
+    % \company \\
+    % \street \\
+    % % \city, \state\ \zip\\
     
-    \vspace{-0.1in}\greeting\ \recipient,\\
+    % \vspace{-0.1in}
+    % \greeting
+    % \recipient,\\
     
     % Body
 
     \vspace{-0.1in}
     \setlength\parindent{24pt}
     \noindent
-    \input{inria2025}
+    \input{cat2025} % This is the letter body file, change to the letter you want to use
 
     
     % Closer
     \vspace{0.1in}    
     \begin{flushright}
-    \closer,
+    % \closer,
 
-    % Signature image
+    % % Signature image
     % \vspace{-0.1in}\includegraphics[width=1.5in]{sig.png}\vspace{-0.1in}
     
     \myname\\
-    \mytitle
+    % \mytitle
     \end{flushright}
 
+    \textbf{References}
+    \printbibliography
+
 \end{document}
+
+% 
+pdflatex main 
+biber main 
+pdflatex main 
+pdflatex main
+% 
