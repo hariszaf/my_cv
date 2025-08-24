@@ -49,282 +49,363 @@
 % the ACTION you took, and the RESULT. 
 % (Pro tip: this is an excellent way to prepare for your interview too.)
 
+Dear Hiring Committee, 
 
-
+Thank you for considering me for the Research Associate in Microbiome Ecology position.
 My understanding is that this is a highly interdisciplinary position. 
-With the following letter, I will try to highlight my skills and experience 
-that I believe are relevant to the position, 
-by addressing the person specification criteria in groups.
-
+With the following, I aim to highlight the most relevant skills and experience 
+to the position, by addressing the person specification criteria in grouped sections.
 
 \textbf{Person Specification}
 
 \textbf{Essential Skills, Knowledge and Experience}
 
+% ----
+% PHD
+% ----
 \textit{
     Have, or be about to obtain, a PhD in a relevant field 
     (e.g. ecology, evolutionary biology, microbiology, mathematical biology etc)
 }
 
     My PhD focuses on microbial ecology and challenges derived from 
-    high throughput sequencing data representing microbiome and their analysis.
-
-    Beyond developing workflows and software tools tailored to 
-    real-world microbial communities, particularly for the analysis amplicon and shotgun
-    metagenomics data, I also served as a lead developer of a \href{https://prego.hcmr.gr/}{data integration platform}
+    amplicon and shotgun metagenomics sequencing data and their analysis.
+    In the first year, I continued my MSc thesis project to deliver PEMA~\cite{zafeiropoulos2020pema} 
+    an amplicon analysis workflow for 5 different marker genes. 
+    Then, I served as a lead developer of the PREGO data integration platform,
     designed to extract and consolidate associations among species, environments,
-    and biological processes from both literature and abundance tables from key platforms
-    such as MGnify, and IMG/JGI.
+    and biological processes from literature and abundance tables from key platforms
+    such as MGnify, and IMG/JGI~\cite{prego}.
+    PEMA has been integrated and supports the LifeWatch-ERIC Internal Joint Initiative on
+    Autonomous Reef Monitoring Structures (ARMS)
+    (https://www.lifewatch.eu/internal-joint-initiative/workflows/).    
 
-    Moreover, besides developing tools, I also applied them to real world data.
-    Together with my partner in science and life, we studied a hypersaline microbial swamp in Karpathos, Greece.
-    She did the sampling and the lab work, while I managed to reconstruct a set of metagenome assembled genomes (MAGs)
-    and have some first insight on the mechanisms these strains used to adapt to such extreme salinity.
+    More than developing tools, I also had the chance to apply them to real world data.
+    Along with \href{https://cpavloud.github.io/mysite/about}{Dr. Christina Pavloudi}, 
+    we studied a hypersaline microbial swamp in Karpathos, Greece,
+    applying both amplicon and shotgun sequencing.
+    Combining our expertises, we managed to reconstruct a set of 
+    250 bacterial and 39 archaeal metagenome assembled genomes (MAGs)
+    revealing an essential diversity of potentially novel phylogenetic clades.
+    Both sequencing methods gave us similar taxonomic compositions and most interestingly,
+    revealed that the formation of the microbial mat in this marsh 
+    exhibits seasonal variation. 
+    On top, we found that the~\textit{salt-in} strategy was the most common for osmoadaptation of the taxa,
+    and we ended up with a new hypothesis on the role of the anaplerotic reactions 
+    in which our samples were rather enriched with, 
+    and their role in replenishing TCA cycle intermediates, and thus on growth in such conditions.
+    % carbohydrate
+    
+    Further work on amplicon analysis challenges, led me to develop a
+    COI-based phylogenetic tree of life, which I then used to distinguish 
+    non-eukaryotic COI sequences from eukaryotic ones~\cite{zafeiropoulos2021darn}.
+    This approach was recently used to the 4th version of Crest, a widely used software 
+    for amplicon taxonomic classification.
+    Also, in the last year of my PhD, and in collaboration with the MGnify team of EMBL-EBI,
+    I was the leading developer of \textit{metagoflow}~\cite{zafeiropoulos2023metagoflow} 
+    a MGnify-based pipeline, tailored to the needs of the 
+    European Marine Biological Research Centre (EMBRC) research infrastructure. 
+
+    Last but not least, during the second year of my PhD, I joined the GeomScale project, 
+    a group of computational geometrists interested in applying their methods in real-world problems. 
+    Since then, I started studying metabolic models, the challenges to build them and 
+    the various ways for their analysis.
+    Along with Dr. Apostolos Chalkis, we managed to establish a Multiphase Monte Carlo Sampling (MMCS) 
+    algorithm for efficient flux sampling~\cite{socg2021} and sample for the first time on the solution space
+    of the Recon3D model; the latest version of the human Genome Scale Metabolic model (GEM).
+    As demonstrated below, metabolic modeling has become my primary tool for investigating 
+    my core research interest: microbial interactions.
 
 
-    My first two years side project gave me the chance to work with a large phylogenetic tree that 
-    we used to distinguish non-eukaryotic COI sequences from eukaryotic ones. 
+% The ‘salt-in’ strategy where osmotic balance is achieved by accumulating high concentrations of inorganic salts 
+% in the medium. As Na+ ions are excluded as much as possible from cells in all three domains of life, the ‘salt-in’ 
+% strategy is based on KCl rather than on NaCl as the main intracellular salt.
 
-    Last, in my last two years side project, I became aware of metabolic modeling and its potential,
-    especially in the study of microbial interactions; my long-standing interest of mine. 
-    During this last time of my PhD, we developed a Multiphase Monte Carlo Sampling (MMCS) algorithm 
-    for efficient flux sampling, in collaboration with Dr. Chalkis, 
-    a computational geometer, and very good friend of mine.
-    Since then, metabolic modeling has become my major tool to approach my favorite research question: 
-    microbial interactions.
+% solut == dialymeni ousia se 
+% solvent == dialytis
+%  ‘compatible solute’  strategy. The term compatible solute was first used in 1972 and was defined as a solute which, at high concentration, allows an enzyme to function effectively (Brown and Simpson 1972). 
+%   compounds belonging to different classes have been shown to serve as compatible solutes in different groups of microorganisms, including polyols, sugars, amino acids, betaines, ectoines, N-acetylated diamino acids and N-derivatized carboxamides of glutamine
+%    Compatible solutes are strong water structure formers and are probably excluded from the hydration shell of proteins, thus stabilizing the hydration shell 
 
-
+% ----
+% EC0-EVO
+% ----
 \textit{
     Strong conceptual understanding of eco-evolutionary theory,
     particularly as applied to microbial communities
 }
+\textit{A keen interest in developing new eco-evolutionary theory}
 
-    Prof. Vellend's work was a turning point in my understanding of community ecology.
-    Based on his idea on all self-replicating systems being shaped by four fundamental processes,
-    (selection, drift, dispersal, speciation) 
-    any such system can be studied in an evolutionary framework.
+    % Prof. Vellend's work was a turning point in my understanding of community ecology.
+    % Based on his idea on all self-replicating systems being shaped by four fundamental processes,
+    % (selection, drift, dispersal, speciation) 
+    % any such system can be studied in an evolutionary framework.
 
-    This is how I think of applying metabolic modeling and in microbial communities, too.
-    Even since now, it has been widely used to study evolution at the strain level - 
-    my goal is to apply its methodologies in eco-evolutionary question. 
+    % This is how I think of applying metabolic modeling and in microbial communities, too.
+    % Even since now, it has been widely used to study evolution at the strain level - 
+    % my goal is to apply its methodologies in eco-evolutionary question. 
 
-    In a recent study of ours, we were able to show the limitations that 
-    except for curated Genome Scale Models (GEMs), predicted growth rates and their ratios 
-    thus, the interaction strength between the two taxa predicted, 
-    do not correlate with such obtained from in vitro data~\cite{joseph2024predicting}.
+    In my first post-doc, I have been working on the 3D'omics project
+    aiming at developing a 3D-based framework to disentangle microbe-microbe and animal-microbe interactions.
+    Over this time, I focused on microbial interactions using metabolic modeling based approaches.
+
+    In a recent study of ours, we were able to show that 
+    predicted growth rates and their ratios 
+    (i.e., the predicted interaction strength between two taxa), 
+    do not correlate with~\textit{in vitro} data~\cite{joseph2024predicting}; 
+    however, curated GEMs had more reliable results.
     To address this limitation, we have just released the first beta-version of a microbial growth data repository, 
     called \href{https://mgrowthdb.gbiomed.kuleuven.be/}{{$\mu$}growthDB}
+    (https://mgrowthdb.gbiomed.kuleuven.be/).
     The broader the endorsement by the microbiology community, 
     the more effectively it will enable us to constrain models with higher accuracy.
 
-    On top of this, \textit{microbetag} (accepted in principle in \textit{Genome Biology}) 
+    My main focus though was~\textit{microbetag}~(https://microbetag.readthedocs.io/) 
+    a software ecosystem for annotating co-occurrence microbial networks.
+    microbetag annotates taxa (nodes) with phenotypic traits, based on genomic and literature information,
+    and their predicted associations (edges) with potential metabolic interactions, based on the \textit{seed} concept. 
+    We consider seeds the compounds that are present and can be used from a reaction in a GEM, but no internal reaction 
+    is producing them, thus the species would have to get them from the environment to enable the corresponding reaction(s).
+    Combining such annotations with network clustering algorithms and enrichment analysis, we are now able to 
+    produce specific hypotheses on what may drive a system.
+    Only last week, \textit{microbetag} was accepted in principle for publication in 
+    \textit{Genome Biology}~\cite{zafeiropoulos2024microbetag}. 
 
-    \cite{zafeiropoulos2024microbetag}
 
-    In, I was able to submit a proposal to the 
+    However, it is my belief, that what depicts my understanding on how microbial communities are shaped and evolved, 
+    but also my personal scientific motivation, is my proposal for the
     European Molecular Biology Organization (EMBO) postodoctoral fellowship program,
-    where I proposed a project to study the relationship between
-    resource preference hierarchy and the evolution of auxotrophies in microbial communities.
-    Although my proposal was eventually not selected, it made it to the interviews step and 
-    received very positive feedback from the reviewers.
+    which made it to the interviews stage. 
+    My main hypothesis was that the auxotrophies a species develops are
+    related to its resource hierarchy—that is, its nutrient preferences. 
+    Moreover, since species in natural communities never exist in isolation, 
+    metabolic interactions with other community members would also influence auxotrophies, 
+    while resource hierarchies simultaneously shape community structure in a feedback loop.
+    Working further this framework, I believe will lead to great insight on the mechanisms communities are shaped. 
 
-
-
-
-    is a tool that annotates microbial co-occurrence networks
-
-, for example StrategAux
-
-
-
-
-
+% ----
+% MODELING
+% ----
 \textit{Experience designing and analysing mathematical models of biological systems}
-
-In our perspective paper "Metabolic models of human gut microbiota: Advances and challenges"
-we highlight how one can a set of different modeling approaches using a toy model of three common 
-gut species with different metabolic capabilities: a carbohydrate fermenter, an acetogen, and a butyrate producer.
-
-We display how one can use kinetic models, 
-inability to handle flexible metabolic responses means that in many cases it does not meet
-Einstein's famous 'as simple as possible but not simpler' criterium
-
-
 \textit{Experience testing models with data}
 
-I am now working with Salmonella in vitro data to decipher why a set of probiotics decrease Salmonella. 
+    In our perspective paper on metabolic modeling on human gut microbiome~\cite{garza2023metabolic}
+    we highlight how one can a set of different modeling approaches using a toy model of three common 
+    gut species with different metabolic capabilities: a carbohydrate fermenter, an acetogen, 
+    and a butyrate producer.
+    We display how one can use kinetic models, 
+    inability to handle flexible metabolic responses means that in many cases it does not meet
+    Einstein's famous 'as simple as possible but not simpler' criterium,
+    and thus, we argue on the added value metabolic modeling can support. 
+
+    In the following sections I provide more details on my previous projects, see for example our evaluation study 
+    for FBA-based interaction strength predictions~\cite{joseph2024predicting}.
+    Yet here, I would like to point out my
+    ongoing project on \textit{Salmonella infantis} and a set of probiotics known to decrease its abundance.
+    To decipher how this is happening, whether all probiotics are required for the decrease to occur  
+    and whether the interactions among any of these strains are metabolically-driven,
+    I am working with a set of \textit{in vitro} data from mono- and co-culture communities, 
+    and the GEMs of the corresponding taxa. 
+
+    A manuscript for this project is in preparation.
 
 
-\textit{A keen interest in developing new eco-evolutionary theory}
+% ----
+% PUBLICATIONS
+% ----
+% Proof of my presenting abilities
+\textit{Ability to present in both written and oral publications}
 
-My main interest lies with StrategAux: my hypothesis that auxotrophies a species adapts is shaped 
-from their resource hierarchy (nutrients' preference). 
-Coalescence can go my synthesis a step further, since invasion would add dynamics in my hypothesis. 
-
-
-
-% --------------------------------------------
-\newpage\vspace*{0.3in} 
-% --------------------------------------------
+    In the following, I highlight my most significant manuscripts and talks, 
+    focusing on those most relevant to the Research Associate in Microbiome Ecology position.
 
 % overall productivity and the impact of your publications.
 \textit{Strong journal publication record.}
 % evidence that you consistently publish in peer-reviewed venues.
 \textit{Track record of peer-reviewed scientific publication(s)}
 
-To date, I have co-authored 17 peer-reviewed publications, 
-serving as first author on 9 and corresponding author on 4.
 
-My PhD related work, was mostly published in the GigaScience journal,
-a well respected journal in the field of bioinformatics and computational biology.
-Both pema~\cite{zafeiropoulos2020pema} and metagoflow~\cite{zafeiropoulos2023metagoflow}
-as well as the review I wrote on the IMBBC High Performance Computing (HPC) system 
-~\cite{zafeiropoulos20210s}.
-
-My two side projects at that time were also published in peer-reviewed journals:
-the COI classifier~\cite{zafeiropoulos2021dark}, where we were able to show that 
-non-eukaryotic sequences can be sequenced when sequencing for COI, was published in the Metabarcoding and Metagenomics journal,
-a rather new journal at the time. 
-While our MMCS algorithm for efficient flux sampling, made it to the top conference in computational biology,
-Symposium on Computational Geometry~\cite{socg2021}.
-
-
-
-
-
-
-
+    To date, I have co-authored 17 peer-reviewed publications, 
+    serving as first author on 9 and corresponding author on 4.
+    My PhD related work, was mostly published in the GigaScience journal:
+    both PEMA~\cite{zafeiropoulos2020pema} and metagoflow~\cite{zafeiropoulos2023metagoflow}
+    as well as the review I wrote on the IMBBC High Performance Computing (HPC) system 
+    ~\cite{zafeiropoulos20210s}.
+    Our study with Dr. Pavloudi on the hypersaline swamp in Karpathos, 
+    was published in FEMS Microbiology Ecology~\cite{pavloudi2022deciphering}.    
+    The MMCS algorithm for efficient flux sampling, was published in the
+    Symposium on Computational Geometry~\cite{socg2021}, while
+    the Python library implementing MMCS and a great range of other walks (\textit{dingo}),
+    was published in Bioinformatics Advances~\cite{chalkis2024dingo}.
+    The evaluation on microbial interaction prediction using FBA-based analysis 
+    was published in BMC Bioinformatics~\cite{joseph2024predicting}.
+    Our gap-filler, \textit{dnngior} was recently published in iScience~\cite{boer2024improving}
+    while \textit{microbetag} was accepted in Genome Biology. 
+    For a complete list of my publications, see my CV.
 
 
 \textit{Track record of conference and / or workshop oral and / or poster presentation(s)}
 
-    I have presented my work in a number of conferences and workshops, 
-    you may see my cv for the full list.
-    A special mention should be made for 
-    my talk on Mikrobiokosmos 2022, the yearly conference held by the Greek community for microbiology,
-    where I presented my first metabolic modeling related work,
-    that also gave me a talk award. 
-
-    I also had the opportunity to present my work at the last two ISME conferences, 
-    which greatly deepened my perspective on microbial ecology.
-
+    I consider my self lucky to have joined in a great number of conferences and workshops,
+    even if the Sars-Cov-2 pandemic was during my PhD. 
+    At Mikrobiokosmos 2022, the annual conference of the Greek microbiology community, 
+    my presentation on flux sampling was recognized with a talk award.
+    Presenting my work at the last two ISME conferences, 
+    which greatly deepened my perspective on microbial ecology, 
+    are also worth-mentioning.
+    A complete list with the conferences I have attended can be found on my cv.
 
 
-
-
-
-
-
-
+% ----
+% Tech Skills
+% ----
 \textit{
     Extensive IT skills, including experience with standard desktop software 
     (e.g. office \& graphics packages), research specific software (e.g. R stats) 
     and online databases (e.g. European Nucleotide Archive, NCBI)
 }
 
- My phd was about data integration, so i can do a thing or two
+
+    Among my tasks on the PREGO project was to harvest data from MGnify, an EMBL-EBI 
+    resource based on ENA, and the IMG/JGI.
+    I have made use of all resources mentioned in the various projects described above.
 
 
+% ----
+% TIME SKILLS
+% ----
+\textit{Ability to meet deadlines}
+\textit{Ability to contribute to broader management and administrative processes.}
+\textit{Ability to assess and organise resources}
+\textit{Excellent time management and organisational skills}
 
+    While working on my research projects, during my PhD, I contributed as a leading writer to two 
+    successfully grant proposals:
 
+    1. an EOSC-Life proposal, which funded the last year of my PhD and led to the development of metagoflow
+    (https://imbbc.hcmr.gr/2021/05/22/). 
+    This project was in collaboration with two research infrastructures, the European Marine Biological Research Centre (EMBRC)
+    and the European Bioinformatics Institute(EMBL-EBI).
+    % Only the last minute, we were able to get an agreement from both these infrastructures, and to convince them that 
+    % we could combine their expertise and needs. 
+    My main contribution was the technical background, as well as the description of the main 
+    working packages regarding the development of the workflow.
+    Dr. Pavloudi and I, being the main writers of the proposal, we managed to set the consortium, 
+    and submit the proposal in less than a three-weeks time.
+    After Dr. Pavloudi left IMBBC, I became the main principal investigator of the project until my PhD was finished. 
+
+    2. the CCMRI HFRI proposal of Dr. Pafilis, my PhD main supervisor
+    % we worked on Dr. Pafilis' idea 
+    where I was responsible for the "Text and data harvesting" work package.
+    % argumentation of the proposal. Since I moved to Prof. Faust lab, I never got the chance to work on this project, 
+    % but I am still proud we made it to the fundable list.
+
+    On top of that, during my PhD, I helped organizing the policy for the HPC use, a really challenging task 
+    from which I learnt a lot on how assessing time and resources can be both experience, but also software-based. 
+
+    After my PhD, I have found a way to both maintain my so-far software, and support the needs of both 
+    European Infrastructures that heavily use them, and keep up with the wide range of tasks at KU.
+
+% ----
+% COMMUNICATION
+% ----
+\textit{Excellent communication and interpersonal skills}
 \textit{
     Proven ability to use initiative to efficiently plan, optimise and 
     progress projects and communicate findings
 }
-
-
 \textit{
     Proven ability to work as part of a collaborative team and 
     to build and maintain effective working relationships with colleagues
 }
-
-During my phd, i managed to work with metabolic modeling even if i was not supposed to in the first place. 
-I met geomscale , a group of computational geometrists, and together we explored metabolic models and designed 
-an algorithm for flux sampling. 
-
-I have developed workflows that support the needs of two european infrustructures lifewatch eric 
-(pema: amplicon analysis) and embrc (metagoflow: shotgun metagenome analysis), which i still coordinate 
-and support. 
-
-I supervise a set of students not only from the lab that hosts me, but also from other institutions: 
-Democritus University of Thrace, Google Summer of Code. 
-
-
-\textit{Excellent communication and interpersonal skills}
-
-
-\textit{Excellent time management and organisational skills}
-
-
-
 \textit{
     Ability and willingness to contribute to the work of others 
     by offering practical and intellectual help
 }
-
-Crete sampling day 
-
-
 \textit{Ability to work independently and as part of a team}
 
-During my PhD, I was more than happy to co-organize and 
+    Since my MSc thesis, I was introduced to a rather social way of doing science,
+    where I would first discuss a lot with wet lab colleagues, who would explain to me 
+    the biological questions and the idiosyncrasies of their data,
+    and then I would have to come up with a plan on how to deal with them from a bioinformatic perspective.
+
+    At the time, I was even involved in organizing Crete's second island sampling day.
+    Along with Dr. Paragkamian and a great number of young researchers, we went through 
+    all the logistics and details to support 
+    this amazing experience of having more than 50 people across the island of Crete, sampling soil eDNA.
+
+    At KU and the Lab of Microbial Systems Biology, this was also the case. 
+    I had the chance to work side-by-side with a lot of wet lab people that 
+    generate data that will eventually be stored in the {$\mu$}growthDB we have been developing. 
+    This was a great piece of team work, in terms of designing the database and is its interface, 
+    based on the needs described by the people that would actually use it in the end,
+    and then figuring out ways on how to implement it.
+
+    At a broader community level, together with Dr. Garza, we invest quite some time in building a
+    core of metabolic modeling classes and how-to example cases
+    
+    (https://github.com/hariszaf/metabolic\_toy\_model)
+    % \footnote{
+    %     \href{https://github.com/hariszaf/metabolic_toy_model}{github.com/hariszaf/metabolic\_toy\_model}
+    % }
+    .
+    Just last week, we submitted a chapter on
+    \textit{"Sampling from the Solution Space and Metabolic Environments of Genome-Scale Metabolic Models"}
+    to be published in an edition on “Flux Balance Analysis”, in the protocol series 
+    Methods in Molecular Biology, by Springer Nature. 
+
+    Last but not least, my commitment to open source projects, has helped me a lot 
+    to be in a position of contributing to the work of others. 
 
 
 
-\textit{Ability to present in both written and oral publications}
-
-SITUATION: 
-TASK you had to complete: 
-ACTION you took:
-RESULT: 
 
 
-\textit{Ability to meet deadlines}
-
-
-
-\textit{Ability to contribute to broader management and administrative processes.}
-
-
-\textit{Ability to assess and organise resources}
-
-
+% ----
+% EQUAL
+% ----
 \textit{Understand equal opportunity issues as they may impact on areas of research content.}
 
-Equal opportunities are not good enough since we don't have the same starting points. 
-It is my belief that much more is needed and i am trying to do something for this through my communities. 
+    Since this project addresses fundamental biology questions 
+    and given the fact that the data to be used come from volcanic hot springs,
+    it is my belief that equal opportunity issues are less likely to affect the research content directly.
+    Yet, I am mindful that collaboration and interpretation should remain open and inclusive, 
+    making sure that diverse perspectives are considered.
 
-% --------------------------------------------
-% \newpage\vspace*{0.3in} 
-% --------------------------------------------
-
-
+% -----------------------------------------------------------------
 
 \textbf{Desirable Skills, Knowledge and Experience }
 
 \textit{Experience building and analysing metabolic flux models}
 
-As already mentioned, I have developed microbetag~\cite{zafeiropoulos2024microbetag}
-and I was among they key developers of dingo~\cite{chalkis2024dingo}.
-As mentioned above too, in a recent study of ours, we tested the accuracy of 
-GEMs in predicting interaction strengths between pairs of species~\cite{joseph2024predicting}.
+    My contribution to the already described software,~\textit{microbetag}~\cite{zafeiropoulos2024microbetag},
+    \textit{dingo}~\cite{chalkis2024dingo}, and
+    \textit{dnngior}~\cite{boer2024improving}
+    highlight my experience in metabolic modeling.
+    So does the recently published study of ours, where we evaluated
+    interaction strength predictions, between pairs of species, using Flux Balance Analysis methods~\cite{joseph2024predicting}.
+    % a neural network based gapfilling tool. 
 
+    In addition, my ongoing projects, the \textit{dingo-stats} Python library for the statistical 
+    analysis of the flux sampling data sets, and the \textit{Salmonella infantis} and its probiotics,
+    are also indicative of my experience with such models.
 
-Also, I was among the developers of dnngior~\cite{boer2024improving}, a neural network based gapfilling tool. 
-
-Currently, I am working on the analysis of metabolic models of a set of probiotics 
-and \textit{Salmonella infantis} to shed some light in the mechanisms with which the former decrease the latter,
-if any metabolic interaction is involved.
+    % to shed some light in the mechanisms with which the former decrease the latter,
+    % if any metabolic interaction is involved.
 
 
 
 
 \textit{Experience with a variety of different machine learning approaches}
 
-In the dnngior~\cite{boer2024improving}, we trained a deep neural network on >11k bacterial species to recover missing reactions.
-
-
-
+    In the \textit{dnngior}~\cite{boer2024improving}, the GEM gap-filling approach of ours, 
+    we trained a deep neural network on $\geq$11k bacterial species to recover missing reactions.
+    
+    In~\href{https://github.com/msysbio/CellScanner/tree/dev}{CellScanner}
+    we developed a framework combining neural networks and UMAP 
+    to distinguish counts from different microbial species in microbial community flow cytometry data
+    using monoculture data to train our classifier.
+    A manuscript on CellScanner is now in preparation.
 
 
 \textit{
@@ -332,101 +413,54 @@ In the dnngior~\cite{boer2024improving}, we trained a deep neural network on >11
     of others (e.g. students, technicians)
 }
 
-probably the part of the job I enjoy the most. 
-Over the last years, I had the chance to supervise a number of students coming from different backgrounds,
-and exploring different topics for their bachelor or master thesis.
+    Over the last years, I had the chance to supervise a number of students coming from different backgrounds,
+    and exploring different topics for their bachelor or master thesis.
+    I also discovered that I enjoy this a lot. 
 
-More specifically, I had the chance to work with \href{https://github.com/ermismd}{Ermis Delopoulos}, 
-a master student in the bioinformatics program at KU Leuven.
-Ermis had a biological background and no experience in Java at all. 
-Me neither. 
-Yet, we needed to develop a Java based app to make microbetag accessible on the Cytoscape, 
-the most widely used network visualization tool in biology.
-In the end, we managed to develop the app,
-and Ermis did a great job in his master thesis, which he defended with distinction.
+    I had the chance to work with \href{https://github.com/ermismd}{Ermis Delopoulos}
+    (https://github.com/ermismd), 
+    a master student in the bioinformatics program at KU Leuven.
+    Neither of us had prior experience in Java, yet we needed to develop a Cytoscape application 
+    to make \textit{microbetag} accessible in the most widely used network visualization platform in biology. 
+    Together, we developed the~\href{https://apps.cytoscape.org/apps/mgg}{MGG app}, and since some extra experience
+    on Java would be more than useful, we submitted Ermis's thesis as a GSoC project, 
+    which was funded in 2023. 
+    He excelled in both GSoC and his master's thesis (defended with distinction), 
+    while I gained Java experience and advanced \textit{microbetag} toward acceptance in 
+    the \textit{Genome Biology} journal (\textit{accepted in principle} since August 2025).
+    
+    An even more challenging task was the supervision of a set of students over the last three years
+    with whom we designed and developed the already mentioned 
+    \href{https://mgrowthdb.gbiomed.kuleuven.be/}{{$\mu$}growthDB}.
+    In the first year of my post-doc at KU Leuven, I had the chance to work with
+    \href{https://github.com/jcasadogp}{Julia Casado Gómez-Pallete}
+    (https://github.com/jcasadogp)
+    a brilliant MSc student with an engineering background. 
+    With Julia we set the basic schema of this rather challenging resource that aims of organizing 
+    all the various experimental setups one may go for to get growth curve data.
+    In the following year,~\href{https://github.com/sofiamonsalve}{Sofia Machado} 
+    (https://github.com/sofiamonsalve)
+    jumped in the project 
+    to develop a first version of both the back and the front-end, with the most challenging task
+    being how to come up with a user-friendly way for describing the data to be submitted. 
+    Based on Sofia's draft, over the last year, an excellent programmer and keen in bioinformatics tasks
+    \href{https://github.com/AndrewRadev/}{Andrew Radev}
+    (https://github.com/AndrewRadev/), 
+    delivered a ready-to-use resource, that is now 
+    expecting users to submit their data and reach back to us for further improvements of the resource. 
 
+    \href{https://github.com/SotirisTouliopoulos/}{Sotiris Touliopoulos}
+    (https://github.com/SotirisTouliopoulos/)
+    a bachelor student from Democritus University of Thrace, Greece, 
+    a member of the IGEM team of his university who had contacted me to help them with their project,
+    decided to start a post-bachelor project with me.
+    He managed to first enroll as a Google Summer of Code student in the GeomScale project,
+    and then continue working with me doing his Erasmus+ traineeship at Prof's Faust lab.
+    Together, we have been investigating what one can do with the findings of flux sampling, 
+    and we have developed a Python package, called \textit{dingo-stats}, for the statistical analysis of flux sampling results.
+    We are now preparing a manuscript for publication.
 
-An even more challenging task was the supervision of a set of students over the last three years
-with whom we designed and developed the already mentioned {$\mu$}growthDB.
-In the first year of my post-doc at KU Leuven, I had the chance to work with
- \href{https://github.com/jcasadogp}{Julia Casado Gómez-Pallete }
-
-then, in the next year 
-\href{https://github.com/sofiamonsalve}{Sofia Machado}
-\href{https://github.com/AndrewRadev/}{Andrew Radev}
-
-
-
-\href{https://github.com/EmmettPeng/}{Xi Peng}
-
-
-
-Anna Voukouna 
-
-Last but not least,~\href{https://github.com/SotirisTouliopoulos/}{Sotiris Touliopoulos}
-an amazing bachelor student from Democritus University of Thrace, Greece,
-he was a member of the IGEM team of his university, and after they contacted me to help them with their project,
-he decided to stay and do an after bachelor project with me.
-He managed to first enroll as a Google Summer of Code student, in the GeomScale project,
-and then continue working with me doing his Erasmus+ traineeship at Prof's Faust lab.
-Together, we have been investigating what one can do with the findings of flux sampling, 
-and we have developed a Python package, called dingo-stats, for the statistical analysis of flux sampling results.
-We are now preparing a manuscript for publication.
-
-
-% --------------------------------------------
-
-
-% I am currently a 
-% % current position
-% postdoctoral researcher at the \href{http://www.msysbiology.com/}{Lab of Microbial Systems Biology}, KU Leuven, 
-% working on the~\href{https://www.3domics.eu/}{3D'omics} project, that focuses on poultry and swine gut microbiome. 
-% % role
-% Specifically, I am involved in the development of microbial network models that incorporate 
-% spatial and metabolic data to predict species interactions and evaluate how metabolites 
-% influence species distributions.
-
-% My research interests focus on unraveling the \textit{Gordian knot} of microbial ecosystems,
-% the laws that govern their structure and dynamics and the role of evolution in shaping them. 
-% In the loop of communities shaped by and re-shaping back their habitat, microbial interactions 
-% work as the interface where the sum effects of those laws are reflected. 
-% Therefore, my ambition is to hack microbial interactions in terms of developing a framework 
-% for their interpretation and dynamics, and I am confident that metabolic modeling, 
-% when integrated with real-world data, can play a pivotal role in advancing this endeavor.
-
-% % During my PhD, I focused on developing workflows and software tools tailored to 
-% % real-world microbial communities, particularly for the analysis of high-throughput 
-% % sequencing data. 
-% % I also served as a lead developer of a \href{https://prego.hcmr.gr/}{data integration platform} 
-% % designed to extract and consolidate associations among species, environments, 
-% % and biological processes from both literature and abundance tables from key platforms 
-% % such as MGnify, and IMG/JGI.
-
-% Over the last two years, I have been developing a 
-% \href{https://microbetag.readthedocs.io/}{microbial co-occurrence network annotator tool}, 
-% and deepened my understanding of pairwise metabolic complementarities, 
-% particularly within the context of cross-feeding interactions, 
-% through topological analysis of their corresponding metabolic models. 
-% Further, I have been contributing on the \href{https://geomscale.github.io/}{GeomScale project}
-% developing an \href{https://github.com/geomScale/dingo}{efficient framework for flux sampling} 
-% within the solution space of metabolic models.
-% To support further our metabolic modeling based efforts, I have also been working on 
-% the development of a \href{https://mgrowthdb.gbiomed.kuleuven.be/}{microbial growth data repository}; 
-% a key resource for constraining models more accurately. 
+    A full list of the students I have supervised is available on my CV.
 
 
-
-% % \newpage\vspace*{0.3in} 
-
-% I am confident that I can apply my current expertise to contribute effectively to the project’s goals,
-%  while also acquiring new skills in the process—an aspect I find particularly valuable.
-% I am enclosing my CV and a letter of recommendation from Prof. Faust. 
-% Please do not hesitate to contact me for anything that might be needed. 
-
-
-
-
-
-
-
-
+    
