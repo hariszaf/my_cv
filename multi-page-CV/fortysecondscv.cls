@@ -106,7 +106,6 @@
 \DeclareOptionX{profilepicrounding}{\setlength{\profilepicrounding}{#1}}
 
 
-
 % show sidebar and page margins
 \newtoggle{tshowframes}
 \togglefalse{tshowframes}
@@ -141,10 +140,10 @@
 % let geometry package perform the changes;
 % must come after loading the base class to prevent overwriting
 \geometry{
-	top=\topbottommargin,
-	bottom=\topbottommargin,
-	left=\sidebarwidth + \leftrightmargin,
-	right=\leftrightmargin,
+	top    = \topbottommargin,
+	bottom = \topbottommargin,
+	left   = \sidebarwidth + \leftrightmargin,
+	right  = \leftrightmargin,
 }
 
 %-------------------------------------------------------------------------------
@@ -197,8 +196,13 @@
 \RequirePackage{xparse}
 
 % enable links
-\RequirePackage[hidelinks]{hyperref}
-
+\RequirePackage[
+    colorlinks = true,
+    linkcolor  = black,   % internal links (e.g. table of contents)
+    urlcolor   = cvblue,    % hyperlinks such as DOIs or websites
+    citecolor  = gray,    % citation links
+    filecolor  = magenta, % file links
+]{hyperref}
 
 %-------------------------------------------------------------------------------
 %                          DERIVED COLOR DEFINITIONS
@@ -524,13 +528,13 @@
 				(\midangle:\midradius pt) --
 				(\midangle:\outerradius + 1ex) --
 				(\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [
-				xshift=\labelshiftdir*0.5cm,inner sep=1ex,
-				outer sep=0pt,
-				text width=\width,
-				anchor=\textanchor,
-				align=\textalign,
-				font=\small,
-				text=wheeltextcolor
+				xshift      = \labelshiftdir*0.5cm,inner sep=1ex,
+				outer sep   = 0pt,
+				text  width = \width,
+				anchor = \textanchor,
+				align  = \textalign,
+				font   = \small,
+				text   = wheeltextcolor
 			]{\name};
 			% Set the old cumulated angle to the new value
 			\global\let\cumnum=\newcumnum
@@ -554,10 +558,10 @@
 		\begin{tikzpicture}[remember picture, overlay]
 			\node[
 				rectangle,
-				fill=sidecolor,
-				anchor=north west,
-				minimum width=\sidebarwidth,
-				minimum height=\paperheight,
+				fill   = sidecolor,
+				anchor = north west,
+				minimum width  = \sidebarwidth,
+				minimum height = \paperheight,
 			]{};%
 			% plot vertical red guideline
 			\plotvline%
@@ -652,7 +656,6 @@
 }
 
 
-
 %-------------------------------------------------------------------------------
 %                              LIST ENVIRONMENTS
 %-------------------------------------------------------------------------------
@@ -661,12 +664,27 @@
 
 % cv list environment --> table, left aligned, width=textwidth
 % tabular starred version adds space to make table as wide as \textwidth here
+% \newenvironment{cvtable}[1][1]{%
+% 	\renewcommand{\arraystretch}{#1}%
+% 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+% }{%
+% 	\end{tabular*}%
+% }
+
+\usepackage{longtable}
+
 \newenvironment{cvtable}[1][1]{%
-	\renewcommand{\arraystretch}{#1}%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+  \renewcommand{\arraystretch}{#1}%
+  \setlength{\LTleft}{0pt}%
+  \setlength{\LTright}{0pt}%
+  \begin{longtable}{@{\extracolsep{\fill}}ll}%
 }{%
-	\end{tabular*}%
+  \end{longtable}%
 }
+
+
+
+
 
 % | <keyword>      <one-line description>            |
 % use parbox if text needs to use multiple lines
