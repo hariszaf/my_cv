@@ -1,0 +1,454 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+    a4paper,
+]{../fortysecondscv}
+
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% Languages
+\usepackage{fontspec}
+\usepackage[english,greek]{babel}
+
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
+%    \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+%    \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+    % default font size is \large, so adjust to harmonize with sidebar layout
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+    bubble center node size = 0.4\sidebartextwidth,
+    bubble node size = 0.25\sidebartextwidth,
+    distance center/other bubbles = 1.5em,
+    % set center bubble color
+    bubble center node color = maincolor!70,
+    % define the list of colors usable in the diagram
+    set color list = {maincolor!10, maincolor!40,
+    maincolor!20, maincolor!60, maincolor!35},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.8,
+}
+
+% Bibliography
+\usepackage[backend=biber,style=authoryear,sorting=ydnt]{biblatex}
+\addbibresource{../bibs/my_publications.bib}
+
+\usepackage{everypage}
+\newcommand{\drawsidebar}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        % fixed sidebar rectangle
+        \fill[gray!10] (current page.north west) rectangle ([xshift=\sidebarwidth]current page.south west);
+
+
+    \end{tikzpicture}%
+}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+
+%% mandatory information
+% your name
+\cvname{Ζαφειρόπουλος \\ Χάρης}
+
+% job title/career
+\cvjobtitle{
+   Βιοπληροφορική,\\ Βιολογία Συστημάτων,\\ Μικροβιακή Οικολογία
+}
+
+% profile picture
+\cvprofilepic{../pics/haris.jpeg}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{Απρίλης 24, 1991}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{
+   % Groefstraat 17, Leuven, Belgium
+   Γαμβέττα 81, Θεσσαλονίκη, Ελλάδα
+}
+% phone number
+\cvphone{+30 694 909 3089}
+% personal website
+\cvsite{https://hariszaf.github.io/}
+% email address
+\cvmail{haris.zafeiropoulos@atomicmail.io}
+% pgp key
+% \cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+    % include gosquare national flags from https://github.com/gosquared/flags;
+    % naming according to ISO 3166-1 alpha-2 country codes
+    \graphicspath{{../pics/flags/}}
+
+    \profilesection{Σχετικά με μένα}
+    \aboutme{
+      Αναπτύσσω υπολογιστικές και βιοπληροφορικές προσεγγίσεις για την καλύτερη κατανόηση των μικροβιακών κοινοτήτων, της δυναμικής τους και των αλληλεπιδράσεων μεταξύ των μικροοργανισμών. 
+      Το κύριο επιστημονικό μου ενδιαφέρον εστιάζει στις μικροβιακές αλληλεπιδράσεις — ιδιαίτερα στις μεταβολικές — και στις εξελικτικές τους προεκτάσεις. Με ενδιαφέρει ιδιαίτερα ο τρόπος με τον οποίο οι μικροβιακές κοινότητες διαμορφώνονται από το περιβάλλον τους και, αντίστροφα, πώς η δομή και η λειτουργία τους επηρεάζουν το ίδιο το περιβάλλον. 
+      Για τη διερεύνηση αυτών των ερωτημάτων, αξιοποιώ ένα ευρύ φάσμα μεθοδολογιών, συμπεριλαμβανομένων προσεγγίσεων «omics», ανάλυσης δικτύων και μεταβολικής μοντελοποίησης.
+    }
+
+    % social network accounts incl. proper hyperlinks
+    \profilesection{Ερευνητικά Προφίλ}
+        \begin{icontable}{2.5em}{1em}
+
+            \social{\faGithub}
+                {https://github.com/hariszaf}
+                {Github Profile}
+
+            \social{\faLinkedin}
+                {https://www.linkedin.com/in/haris-zafeiropoulos-44555711a/}
+                {LinkedIn Profile}
+
+            \social{\faGraduationCap}
+                {https://scholar.google.com/citations?user=RWsm3NYAAAAJ\&hl=en}
+                {Google Scholar Profile}
+
+            \social{\faResearchgate}
+                {https://www.researchgate.net/profile/Haris-Zafeiropoulos}
+                {ResearchGate Profile}
+
+            % \social{\faSkype}
+            %     {haris.zaf2}
+            %     {haris.zaf2}
+
+            % \social{\faTwitter}
+            %     {https://twitter.com/haris_zaf}
+            %     {@haris\_zaf}
+
+            % \social{\faBlueSky}
+            %     {https://orcid.org/0000-0002-1825-0097}
+            %     {ORCID Profile}
+        \end{icontable}
+
+
+}
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+
+    % Languages
+    % \profilesection{Γλώσσες}
+    %     \pointskill{\flag{../pics/flags/GR.png}}{Greek}{5}
+    %     \pointskill{\flag{../pics/flags/GB.png}}{English}{5}
+    %     \pointskill{\flag{../pics/flags/FR.png}}{French}{3}
+
+
+% Software
+    \profilesection{Software}
+    \begin{sidebarminipage}
+        \chartlabel{\href{http://pema.hcmr.gr/}{PEMA}}
+        \chartlabel{\href{http://prego.hcmr.gr/}{PREGO}}
+        \chartlabel{\href{https://github.com/hariszaf/darn}{DARN}}
+        \chartlabel{\href{https://github.com/GeomScale/dingo}{dingo}}
+        \chartlabel{\href{https://hariszaf.github.io/microbetag}{microbetag}}
+      \chartlabel{\href{https://github.com/MGXlab/DNNGIOR}{DNNGIOR}}
+      \chartlabel{\href{https://mgrowthdb.gbiomed.kuleuven.be/}{μGrowthDB}}
+
+    \end{sidebarminipage}
+
+    % Research fields
+    \profilesection{Research fields}
+    \begin{figure}\centering
+        \smartdiagram[bubble diagram]{
+            \textcolor{white}{\textbf{microbial}} \\
+            \textcolor{white}{\textbf{communities}},
+            \textcolor{black!90}{data} \\
+            \textcolor{black!90}{integration},
+            \textcolor{black!90}{metagenomics},
+            \textcolor{black!90}{metabolic} \\
+            \textcolor{black!90}{modeling},
+            \textcolor{black!90}{workflows} \\
+            \textcolor{black!90}{\& HPC}
+        }
+    \end{figure}
+
+    % Memberships
+    \profilesection{Memberships}
+        \begin{memberships}
+            \membership[4em]{../pics/mkb.png}{\href{http://www.mikrobiokosmos.org/}{Mikrobiokosmos}}
+            \membership[4em]{../pics/isme.png}{\href{https://www.isme-microbes.org/}{International Society of Microbial Ecology}}
+            \membership[4em]{../pics/bsm.png}{\href{https://belsocmicrobio.be}{Belgian Society for Microbiology}}
+        \end{memberships}
+}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 3rd PAGE
+%-------------------------------------------------------------------------------
+\addtomoresidebar{
+
+    \profilesection{Δεξιότητες \\ Προγραμματισμού}
+        \pointskill{\faLinux}{Unix / Linux / AWK}{4}[5]
+        \pointskill{\faPython}{Python 3.0}{4}[5]
+        \pointskill{\flag{../pics/flags/Matlab_Logo.png}}{Matlab}{3}[5]
+        \pointskill{\textsf{R}}{R}{3}[5]
+        \pointskill{\flag{../pics/flags/cpp.png}}{C++}{2}[5]
+        \pointskill{\faDev}{HTML / CSS / JS}{3}[5]
+        \pointskill{\faDocker}{Docker \& Singularity}{4}[5]
+        \pointskill{\faCloudDownload*}{REST API}{4}[5]
+
+
+    % \profilesection{Math and Stats}
+        % \pointskill{\faTable}{Γραμμική Άλγεβρα}{4}[5]
+        % \pointskill{\faCube}{Mεταβολική Mοντελοποίηση βασισμένη σε Περιορισμούς}{4}[5]
+
+
+    \profilesection{Εξειδικευμένες Ικανότητες}
+        \barskill{\faVirus}{Μικροβιακή Οικολογία}{80}  % \faVirus
+        \barskill{\faCubes}{Μοντελοποίηση Μεταβολισμού}{90}  % \faVirus
+      \barskill{\faTable}{Γραμμική Άλγεβρα}{70}
+        \barskill{\faLaptop}{Προγραμματισμός}{90} % \faLaptop
+        \barskill{\faPenNib}{Συγγραφή Επιστημονικών Άρθρων}{90} % \faBookReader
+}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR EMPTY PAGES
+%-------------------------------------------------------------------------------
+\addtoemptysidebar{}
+
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Εργασιακή Εμπειρία}
+
+\cvsubsection{Ερευνητικά έργα στο πλαίσιο επαγγελματικής απασχόλησης }
+
+    \begin{cvtable}[1]
+
+        \cvitem{2022 - 2026}{\href{https://3domics.eu}{3D'omics}}{Μεταδιδακτορικό}
+        {
+         \textbf{Στόχος του έργου} είναι η ανάπτυξη τεχνολογιών και πρωτοκόλλων για τη δημιουργία τρισδιάστατων «omics landscapes» και την ανακατασκευή οικοσυστημάτων αλληλεπίδρασης εντερικού μικροβιώματος και ξενιστή. 
+         \textbf{Ο ρόλος μου} επικεντρώνεται στην ανάλυση μικροβιακών δικτύων, συνδυάζοντας χωρικά και μεταβολικά δεδομένα για την πρόβλεψη αλληλεπιδράσεων μεταξύ ειδών και της επίδρασης των μεταβολιτών στην κατανομή τους, μέσω ανάλυσης δικτύων συν-εμφάνισης και μεταβολικής μοντελοποίησης σε κλίμακα γονιδιώματος. 
+        } 
+      
+      \\
+
+        \cvitem{2022 - 2022}{
+         \href{https://imbbc.hcmr.gr/project/eosc-life-gos/
+      }{A workflow for marine Genomic Observatories data analysis}}{Επιστημονικός συνεργάτης} 
+      {
+            \textbf{Στόχος του έργου} ήταν η διευκόλυνση της ερμηνείας των μεγάλων όγκων δεδομένων που παράγονται από γονιδιωματικά παρατηρητήρια, μέσω της έγκαιρης παροχής των ταξινομικών χαρακτηρισμών κάθε δείγματος σε κατανοητή και προσβάσιμη μορφή. 
+            \textbf{Ο ρόλος μου} ήταν η κύρια ανάπτυξη της υπολογιστικής ροής εργασίας που παραδόθηκε στο πλαίσιο του έργου, ενώ κατά το δεύτερο μισό του ανέλαβα καθήκοντα Επιστημονικά Υπεύθυνου (Principal Investigator).
+        } 
+      
+      \\
+
+        \cvitem{2018 - 2021}{\href{http://prego.hcmr.gr/}{PREGO: Process, environment, organism (PREGO)}}{Υποψήφιος Διδάκτορας}
+            {
+            \textbf{Στόχος του έργου} ήταν η μελέτη και κατανόηση της λειτουργίας των οικοσυστημάτων σε μικροβιακό επίπεδο, μέσω μιας προσέγγισης συστημικής βιολογίας. 
+            \textbf{Ο ρόλος μου} στο έργο, το οποίο αποτέλεσε το κύριο ερευνητικό αντικείμενο της διδακτορικής μου διατριβής, ήταν η ανάπτυξη των επιμέρους λειτουργιών της πλατφόρμας που αφορούν την ολοκλήρωση και ενοποίηση ετερογενών βιολογικών δεδομένων.
+        } 
+      
+      \\
+        
+        \cvitem{2019 -- present}{\href{https://elixir-greece.org}{ELIXIR–GR}}{Επιστημονικός Συνεργάτης}
+            {
+         \textbf{Στόχος του έργου} ήταν η συμβολή στην ανάπτυξη μιας βιώσιμης ευρωπαϊκής υποδομής για βιολογικές πληροφορίες, στο πλαίσιο του ELIXIR-GR, του Ελληνικού Εθνικού Κόμβου της ευρωπαϊκής ερευνητικής υποδομής ELIXIR. 
+         \textbf{Ο ρόλος μου} στο έργο ήταν η ανάπτυξη containerized εκδόσεων διαφόρων εργαλείων λογισμικού, με στόχο τη διευκόλυνση της εγκατάστασης, αναπαραγωγιμότητας και αξιοποίησής τους.   
+        }
+
+      \\
+        
+        \cvitem{2018 - 2020}{\href{https://reconnect.hcmr.gr/}{RECONNECT}}{Επιστημονικός Συνεργάτης}
+            {
+         \textbf{Στόχος του έργου} (Interreg V-B «Balkan-Mediterranean 2014–2020»)η ανάπτυξη στρατηγικών για τη βιώσιμη διαχείριση Θαλάσσιων Προστατευόμενων Περιοχών (MPAs) και περιοχών Natura 2000. 
+         \textbf{Ο ρόλος μου} επικεντρώθηκε στην ανάλυση μικροβιακών δεδομένων αλληλούχισης  (amplicon analysis).
+        }
+
+    \end{cvtable}
+
+
+
+\cvsubsection{Συμμετοχές σε άλλα έργα}
+
+    \begin{cvtable}[1]
+
+        \cvitem{2021 - 2023}{\href{https://www.embrc.eu}{EMBRC}}{Επιστημονικός Συνεργάτης}
+            {
+         \textbf{Στόχος του έργου} ήταν η υποστήριξη της βασικής και εφαρμοσμένης έρευνας στη θαλάσσια βιολογία και οικολογία, καθώς και η προώθηση μιας βιώσιμης «γαλάζιας οικονομίας», μέσω του European Marine Biological Resource Centre (EMBRC). 
+         \textbf{Ο ρόλος μου} στο έργο ήταν να συνεισφέρω στις δραστηριότητες του 
+         \href{https://www.embrc.eu/embrc-network/greece}{Ελληνικού Κόμβου του EMBRC (CMBR)}, με έμφαση στην ανάπτυξη υπολογιστικών ροών εργασίας (workflows) για την ανάλυση και επεξεργασία των δεδομένων που παράγονται από το δίκτυο.
+        }
+
+     \\
+
+     \cvitem{2020 - ongoing}
+         {\href{https://www.lifewatch.eu}{LifeWatch-ERIC}}
+         {Επιστημονικός Συνεργάτης}
+         {
+            \textbf{Στόχος του έργου:} Η μελέτη και μακροχρόνια παρακολούθηση της βιοποικιλότητας, με έμφαση στα εισβολικά θαλάσσια είδη, στο πλαίσιο του LifeWatch ERIC.
+            \textbf{Ο ρόλος μου:} Συντήρηση και ανάπτυξη του workflow του PEMA σύμφωνα με τις ανάγκες της υποδομής, στο πλαίσιο της~\href{https://www.lifewatch.eu/internal-joint-initiative/validation-cases/long-term-monitoring-of-invasive-marine-species/}{Internal Joint Initiative για την παρακολούθηση εισβλητικών ειδών}.
+         }
+
+    \end{cvtable}
+
+
+%  -----------------------------------------------------------------------
+% \newpage
+\makemoresidebar
+
+%  -----------------------------------------------------------------------
+\AddEverypageHook{\drawsidebar}
+
+% ----------------------------------------------------------------------------
+%                            EDUCATION
+% ----------------------------------------------------------------------------
+
+\cvsection{Εκπαίδευση}
+
+    \cvsubsection{Μεταπτυχιακές Σπουδές}
+
+    \begin{cvtable}[1]
+        \cvitem{2018 -- 2022}{ Διδακτορικό στη Βιοπληροφορική }
+        {\href{https://en.uoc.gr/}{Πανεπιστήμιο Κρήτης}, \href{https://www.biology.uoc.gr/en}{Τμήμα Βιολογίας}}{}
+        \cvitem{}{Διατριβή}{\href{https://imbbc.hcmr.gr/}{ΙΘΑΒΒΥΚ - ΕΛΚΕΘΕ}}
+            {\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_7_d_metadata-dlib-1661248925-407543-18532.tkl?language=en}{Μικροβιακές κοινότητες υπό το πρίσμα αλληλουχίας υψηλής απόδοσης, ολοκλήρωσης δεδομένων \& ανάλυση μεταβολικών δικτύων}}
+
+      \\
+ 
+      \cvitem{2016 -- 2018}{Μεταπτυχιακό στη Βιοπληροφορική}
+        {\href{https://en.uoc.gr/}{Πανεπιστήμιο Κρήτης}, \href{http://www.english.med.uoc.gr/}{Ιατρική Σχολή}}
+            {Βαθμός: 9.1/10.0}
+        \cvitem{}{Πτυχιακή εργασία}{\href{https://imbbc.hcmr.gr/}{ΙΘΑΒΒΥΚ - ΕΛΚΕΘΕ}}
+            {\href{https://www.openarchives.gr/aggregator-openarchives/edm/elocus/000018-dlib_5_2_f_metadata-dlib-1545038085-364284-26948.tkl}{Μετακωδικοποίηση eDNA για την αξιολόγηση της βιοποικιλότητας: σχεδιασμός αλγορίθμων και υλοποίηση γραμμών εργασιών βιοπληροφορικής}}
+
+    \end{cvtable}
+
+
+    \cvsubsection{Προπτυχιακές Σπουδές}
+        \begin{cvtable}[1]
+            
+        \cvitem{2011 -- 2016}{Πτυχίο στη Βιολογία}{\href{https://en.uoa.gr/}{Εθνικό \& Καποδιστριακό Πανεπιστήμιο Αθηνών} }
+            {Βαθμός: 6.2 / 10.0}
+        \cvitem{}{Πτυχιακή εργασία}{\href{https://en.uoa.gr/schools_and_departments/school_of_science/}{Σχολή Θετικών Επιστημών}, \href{http://en.biol.uoa.gr/}{Τμήμα Βιολογίας}}
+            {Μορφολογία, μορφομετρία και ανατομία ειδών του γένους \textit{Pseudamnicola} στην Ελλάδα}
+            
+    \end{cvtable}
+
+
+% % ----------------------------------------------------------------------------
+% %                            PUBLICATIONS
+% % ----------------------------------------------------------------------------
+\cvsection{Δημοσιεύσεις}
+
+   \begin{cvtable}
+   \input{../tex/publications.tex}
+   \end{cvtable}
+
+% ------------------------------------------------------------------------
+%                    CONFERENCES 
+% ------------------------------------------------------------------------
+\cvsection{Συνέδρια}
+
+   \begin{cvtable}[1]
+      \input{../tex/conferences.tex}
+   \end{cvtable}
+
+
+% ------------------------------------------------------------------------
+%                    SUMMER SCHOOLS
+% ------------------------------------------------------------------------
+\cvsection{Εργαστήρια \& Summer schools}
+
+   \begin{cvtable}[1]
+      \input{../tex/workshops.tex}
+   \end{cvtable}
+
+% ------------------------------------------------------------------------
+%                    SUPERVISION
+% ------------------------------------------------------------------------
+\cvsection{Επίβλεψη Φοιτητών} 
+
+   \begin{cvtable}[1]
+   \input{../tex/students.tex}
+   \end{cvtable}
+
+% ------------------------------------------------------------------------
+%                    TEACHING 
+% ------------------------------------------------------------------------
+\cvsection{Εκπαιδευτική Εμπειρία}
+
+   \begin{cvtable}[1]
+      \input{../tex/teaching.tex}
+   \end{cvtable}
+
+
+
+% ------------------------------------------------------------------------
+%                           AWARDS & REFS
+% ------------------------------------------------------------------------
+\cvsection{Βραβεία \& Υποτροφίες}
+
+   \begin{cvtable}[1]
+      \input{../tex/awards.tex}
+   \end{cvtable}
+
+
+% ------------------------------------------------------------------------
+%                           REFERENCES
+% ------------------------------------------------------------------------
+\cvsection{Συστάσεις}
+
+   \begin{cvtable}[1]
+      \input{../tex/references.tex}
+   \end{cvtable}
+
+\makebacksidebar
+
+
+\end{document}

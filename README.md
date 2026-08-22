@@ -1,3 +1,30 @@
+## Structure 
+
+Under the `bibs/` folder, I have `.bib` files with the raw info of my cv. 
+
+Under the `.tex/` folder, you can find the processed info as from the [`generate_tex_tables.py`](./generate_tex_tables.py) that takes the `.bib` files and creates `cvitems` for the main `.tex`.
+
+The following `.tex` files though, are kept up-to-date manually:
+```
+references.tex 
+awards.tex 
+workshops.tex
+```
+
+To `generate_tex_tables.py`, just run:
+```
+./generate_tex_tables.py
+```
+
+
+To compile the greek version:
+```
+latexmk -xelatex zafeiropoulos_cv_greek.tex
+```
+
+
+
+
 Forty Seconds CV
 ================
 

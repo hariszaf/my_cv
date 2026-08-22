@@ -10,13 +10,13 @@ from pylatexenc.latexencode import unicode_to_latex
 # ----
 
 # Load your .bib file
-with open("my_publications.bib") as bibtex_file:
+with open("bibs/my_publications.bib") as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 # Sort by year (descending)
 entries = sorted(bib_database.entries, key=lambda e: e.get('year', '0000'), reverse=True)
 
-with open("publications.tex", "w") as out:
+with open("tex/publications.tex", "w") as out:
     for e in entries:
         # title   = e.get('title', '').replace('{', '').replace('}', '')
         text   = e.get('title', '').replace('{', '').replace('}', '')
@@ -50,13 +50,13 @@ with open("publications.tex", "w") as out:
 # Students
 # ----
 
-with open("my_students.bib") as bibtex_file:
+with open("bibs/my_students.bib") as bibtex_file:
     bib_students = bibtexparser.load(bibtex_file)
 
 # Sort by year (descending)
 students = sorted(bib_students.entries, key=lambda e: e.get('year', '0000'), reverse=True)
 
-with open("students.tex", "w", encoding="utf-8") as f:
+with open("tex/students.tex", "w", encoding="utf-8") as f:
     for s in students:
         link_tex = s['link'] if s['link'] else "{}"
         desc = s['level'] + " @ " + s['school'] if 'school' in s else s['level']
@@ -73,13 +73,13 @@ with open("students.tex", "w", encoding="utf-8") as f:
 
 
 # Load your .bib file
-with open("my_conferences.bib") as bibtex_file:
+with open("bibs/my_conferences.bib") as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 # Sort by year (descending)
 conferences = sorted(bib_database.entries, key=lambda e: e.get('year', '0000'), reverse=True)
 
-with open("conferences.tex", "w") as out:
+with open("tex/conferences.tex", "w") as out:
     for entry in sorted(bib_database.entries, key=lambda e: e.get("year", ""), reverse=True):
         entry_id = entry.get("ID", "")
         year     = entry.get("year", "")
@@ -101,12 +101,12 @@ with open("conferences.tex", "w") as out:
 # Teaching
 # ----
 
-with open("my_teaching.bib") as bib_file:
+with open("bibs/my_teaching.bib") as bib_file:
     bib_database = bibtexparser.load(bib_file)
 
 lectures = sorted(bib_database.entries, key=lambda e: e.get('year', '0000'), reverse=True)
 
-with open("teaching.tex", "w") as out:
+with open("tex/teaching.tex", "w") as out:
     for e in lectures:
         year    = e.get('year', '')
         title   = e.get('title', '').replace('{', '').replace('}', '')
@@ -130,7 +130,7 @@ with open("teaching.tex", "w") as out:
 # Workshops - summer schools
 # ----
 
-with open("my_workshops.bib") as bib_file:
+with open("bibs/my_workshops.bib") as bib_file:
     bib_database = bibtexparser.load(bib_file)
 
 workshops = sorted(bib_database.entries, key=lambda e: e.get('year', '0000'), reverse=True)

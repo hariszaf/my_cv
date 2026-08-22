@@ -106,7 +106,6 @@
 \DeclareOptionX{profilepicrounding}{\setlength{\profilepicrounding}{#1}}
 
 
-
 % show sidebar and page margins
 \newtoggle{tshowframes}
 \togglefalse{tshowframes}
@@ -141,10 +140,10 @@
 % let geometry package perform the changes;
 % must come after loading the base class to prevent overwriting
 \geometry{
-	top=\topbottommargin,
-	bottom=\topbottommargin,
-	left=\sidebarwidth + \leftrightmargin,
-	right=\leftrightmargin,
+	top    = \topbottommargin,
+	bottom = \topbottommargin,
+	left   = \sidebarwidth + \leftrightmargin,
+	right  = \leftrightmargin,
 }
 
 %-------------------------------------------------------------------------------
@@ -181,12 +180,9 @@
 \fi
 
 % pictures, icons and drawings
-\ifxetexorluatex
-	\RequirePackage{fontawesome5}
-	\RequirePackage{academicons}
-\else
-	\RequirePackage{fontawesome5}
-\fi
+\RequirePackage{fontawesome5}
+\RequirePackage{academicons}
+
 \RequirePackage{tikz}
 \usetikzlibrary{arrows, backgrounds}
 
@@ -200,8 +196,13 @@
 \RequirePackage{xparse}
 
 % enable links
-\RequirePackage[hidelinks]{hyperref}
-
+\RequirePackage[
+    colorlinks = true,
+    linkcolor  = black,   % internal links (e.g. table of contents)
+    urlcolor   = cvblue,    % hyperlinks such as DOIs or websites
+    citecolor  = gray,    % citation links
+    filecolor  = magenta, % file links
+]{hyperref}
 
 %-------------------------------------------------------------------------------
 %                          DERIVED COLOR DEFINITIONS
@@ -527,13 +528,13 @@
 				(\midangle:\midradius pt) --
 				(\midangle:\outerradius + 1ex) --
 				(\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [
-				xshift=\labelshiftdir*0.5cm,inner sep=1ex,
-				outer sep=0pt,
-				text width=\width,
-				anchor=\textanchor,
-				align=\textalign,
-				font=\small,
-				text=wheeltextcolor
+				xshift      = \labelshiftdir*0.5cm,inner sep=1ex,
+				outer sep   = 0pt,
+				text  width = \width,
+				anchor = \textanchor,
+				align  = \textalign,
+				font   = \small,
+				text   = wheeltextcolor
 			]{\name};
 			% Set the old cumulated angle to the new value
 			\global\let\cumnum=\newcumnum
@@ -557,10 +558,10 @@
 		\begin{tikzpicture}[remember picture, overlay]
 			\node[
 				rectangle,
-				fill=sidecolor,
-				anchor=north west,
-				minimum width=\sidebarwidth,
-				minimum height=\paperheight,
+				fill   = sidecolor,
+				anchor = north west,
+				minimum width  = \sidebarwidth,
+				minimum height = \paperheight,
 			]{};%
 			% plot vertical red guideline
 			\plotvline%
@@ -585,6 +586,11 @@
 \newcommand{\backsidebar}{}
 \newcommand{\addtofrontsidebar}[1]{\apptocmd{\frontsidebar}{#1}{}{}}
 \newcommand{\addtobacksidebar}[1]{\apptocmd{\backsidebar}{#1}{}{}}
+\newcommand{\moresidebar}{}
+\newcommand{\addtomoresidebar}[1]{\apptocmd{\moresidebar}{#1}{}{}}
+\newcommand{\emptysidebar}{}
+\newcommand{\addtoemptysidebar}[1]{\apptocmd{\emptysidebar}{#1}{}{}}
+
 
 \newcommand{\makefrontsidebar}{%
 	\begin{sidebar}
@@ -622,6 +628,33 @@
 	\end{sidebar}
 }
 
+\newcommand{\makemoresidebar}{%
+	\begin{sidebar}
+		% begin with name instead of picture
+		\nameandjob
+
+		% make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+
+		% user definitions
+		\moresidebar
+	\end{sidebar}
+}
+
+
+\newcommand{\makeemptysidebar}{%
+	\begin{sidebar}
+		% begin with name instead of picture
+		\nameandjob
+
+		% make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+
+		% user definitions
+		\emptysidebar
+	\end{sidebar}
+}
+
 
 %-------------------------------------------------------------------------------
 %                              LIST ENVIRONMENTS
@@ -631,12 +664,27 @@
 
 % cv list environment --> table, left aligned, width=textwidth
 % tabular starred version adds space to make table as wide as \textwidth here
+% \newenvironment{cvtable}[1][1]{%
+% 	\renewcommand{\arraystretch}{#1}%
+% 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+% }{%
+% 	\end{tabular*}%
+% }
+
+\usepackage{longtable}
+
 \newenvironment{cvtable}[1][1]{%
-	\renewcommand{\arraystretch}{#1}%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+  \renewcommand{\arraystretch}{#1}%
+  \setlength{\LTleft}{0pt}%
+  \setlength{\LTright}{0pt}%
+  \begin{longtable}{@{\extracolsep{\fill}}ll}%
 }{%
-	\end{tabular*}%
+  \end{longtable}%
 }
+
+
+
+
 
 % | <keyword>      <one-line description>            |
 % use parbox if text needs to use multiple lines

@@ -19,13 +19,12 @@
 %   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
 % * further attributions are indicated immediately before corresponding code
 
-
 %-------------------------------------------------------------------------------
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
 \documentclass[
     a4paper,
-]{fortysecondscv}
+]{../fortysecondscv}
 
 % improve word spacing and hyphenation
 \usepackage{microtype}
@@ -93,7 +92,7 @@
 \cvjobtitle{Bioinformatics, Systems\\[0.2em]  Biology, Microbial Ecology}
 
 % profile picture
-\cvprofilepic{pics/haris.jpeg}
+\cvprofilepic{../pics/haris.jpeg}
 
 % NOTE: ordering in sidebar will mimic the following order
 
@@ -117,7 +116,7 @@
 \addtofrontsidebar{
     % include gosquare national flags from https://github.com/gosquared/flags;
     % naming according to ISO 3166-1 alpha-2 country codes
-    \graphicspath{{pics/flags/}}
+    \graphicspath{{../pics/flags/}}
 
     \profilesection{About Me}
     \aboutme{
@@ -206,9 +205,9 @@
     % Memberships
     \profilesection{Memberships}
         \begin{memberships}
-            \membership[4em]{pics/mkb.png}{\href{http://www.mikrobiokosmos.org/}{Mikrobiokosmos}}
-            \membership[4em]{pics/isme.png}{\href{https://www.isme-microbes.org/}{International Society of Microbial Ecology}}
-            \membership[4em]{pics/bsm.png}{\href{https://belsocmicrobio.be}{Belgian Society for Microbiology}}
+            \membership[4em]{../pics/mkb.png}{\href{http://www.mikrobiokosmos.org/}{Mikrobiokosmos}}
+            \membership[4em]{../pics/isme.png}{\href{https://www.isme-microbes.org/}{International Society of Microbial Ecology}}
+            \membership[4em]{../pics/bsm.png}{\href{https://belsocmicrobio.be}{Belgian Society for Microbiology}}
         \end{memberships}
 }
 
@@ -220,9 +219,9 @@
     \profilesection{Coding Skills}
         \pointskill{\faLinux}{Unix / Linux / AWK}{4}[5]
         \pointskill{\faPython}{Python 3.0}{4}[5]
-        \pointskill{\flag{pics/flags/Matlab_Logo.png}}{Matlab}{3}[5]
+        \pointskill{\flag{../pics/flags/Matlab_Logo.png}}{Matlab}{3}[5]
         \pointskill{\textsf{R}}{R}{3}[5]
-        \pointskill{\flag{pics/flags/cpp.png}}{C++}{2}[5]
+        \pointskill{\flag{../pics/flags/cpp.png}}{C++}{2}[5]
         \pointskill{\faDev}{HTML / CSS / JS}{3}[5]
         \pointskill{\faDocker}{Docker \& Singularity}{4}[5]
         \pointskill{\faCloudDownload*}{REST API}{4}[5]
@@ -257,11 +256,12 @@
 
 \cvsection{Research projects - working experience}
 
+
 \cvsubsection{Formal Employment Projects}
 
     \begin{cvtable}[3]
 
-        \cvitem{2022 - currently}{\href{https://3domics.eu}{3D'omics}}{Post-doc}
+        \cvitem{2022 - 2026}{\href{https://3domics.eu}{3D'omics}}{Post-doc}
         {Aim of the project is to come up with technology and protocols to generate 3D omics landscapes,
         achieving reconstructions of intestinal host microbiota ecosystems.
         My role on the project is the analysis of microbial networks integrating spatial and metabolic data 
@@ -294,7 +294,6 @@
         }
 
     \end{cvtable}
-
 
 
 \cvsubsection{Unofficial Contributions}
@@ -337,7 +336,7 @@
 \AddEverypageHook{\drawsidebar}
 
 % ----------------------------------------------------------------------------
-%                            PUBLICATIONS
+%                            EDUCATION
 % ----------------------------------------------------------------------------
 
 \cvsection{Education}
@@ -369,11 +368,14 @@
             
     \end{cvtable}
 
+% ----------------------------------------------------------------------------
+%                            PUBLICATIONS
+% ----------------------------------------------------------------------------
 
 \cvsection{Publications}
 
 \begin{cvtable}
-   \input{publications.tex}
+   \input{../tex/publications.tex}
 \end{cvtable}
 
 
@@ -385,7 +387,7 @@
 
 \cvsection{Conferences}
 \begin{cvtable}
-    \input{conferences.tex}
+    \input{../tex/conferences.tex}
 \end{cvtable}
 
 
@@ -459,20 +461,20 @@
 
 \cvsection{Supervision}
 
-\begin{cvtable}
-   \input{students.tex}
-\end{cvtable}
+    \begin{cvtable}
+    \input{../tex/students.tex}
+    \end{cvtable}
 
 % ------------------------------------------------------------------------
 %                    TEACHING 
 % ------------------------------------------------------------------------
 
 \cvsection{Teaching}
-\begin{cvtable}
 
-    \input{teaching.tex}
+    \begin{cvtable}
+        \input{../tex/teaching.tex}
 
-\end{cvtable}
+    \end{cvtable}
 
 
 
@@ -480,106 +482,111 @@
 %                           AWARDS & REFS
 % ------------------------------------------------------------------------
 \cvsection{Awards \& Scholarships}
-\begin{cvtable}
 
-    \cvitem{2021}{9th conference of the Hellenic Society of Mikrobiokosmos}
-    {\href{https://mikrobiokosmos.org/wp-content/uploads/2022/03/9th_mbk_abstract_book_2021.pdf}{MBK9}}
-    {
-        \textbf{Oral presentation award:}{
-        Sampling the flux space of microbial metabolic networks for (un)biased assessment of the possible functional states:
-        the example of Sars-Cov-2 on the human alveolar macrophage metabolic network.
-    }}{}
+    \begin{cvtable}
 
-    \\
+        \cvitem{2021}{9th conference of the Hellenic Society of Mikrobiokosmos}
+        {\href{https://mikrobiokosmos.org/wp-content/uploads/2022/03/9th_mbk_abstract_book_2021.pdf}{MBK9}}
+        {
+            \textbf{Oral presentation award:}{
+            Sampling the flux space of microbial metabolic networks for (un)biased assessment of the possible functional states:
+            the example of Sars-Cov-2 on the human alveolar macrophage metabolic network.
+        }}{}
 
-    \cvitem{2021}{Google Summer of Code}
-    {\href{https://summerofcode.withgoogle.com/}{GSoC}}
-    {Project title: \textit{\href{https://hariszaf.github.io/gsoc2021/}
-    {From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes}}}{}
+        \\
 
-    \\
+        \cvitem{2021}{Google Summer of Code}
+        {\href{https://summerofcode.withgoogle.com/}{GSoC}}
+        {Project title: \textit{\href{https://hariszaf.github.io/gsoc2021/}
+        {From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes}}}{}
 
-    \cvitem{2021}{European Molecular Biology Organization Short-Term Fellowship}
-    {\href{https://www.embo.org/}{EMBO}}
-    {Project title: \textit{"Exploiting data integration, text-mining and computational geometry to enhance microbial interactions inference from  co-occurrence networks"}}{}
+        \\
 
-    \\
+        \cvitem{2021}{European Molecular Biology Organization Short-Term Fellowship}
+        {\href{https://www.embo.org/}{EMBO}}
+        {Project title: \textit{"Exploiting data integration, text-mining and computational geometry to enhance microbial interactions inference from  co-occurrence networks"}}{}
 
-    \cvitem{2020}{Federation of European Microbiological Societies \\ Meeting Attendance Grant}
-    {\href{https://fems-microbiology.org/}{FEMS}}
-    {for joining the \textit{"Metagenomics, Metatranscript- omics and \\ 
-    multi ’omics for microbial community studies"} Physalia course}{}
+        \\
 
-    \\
-    
-    \cvitem{2019}{Short Term Scientific Mission (STSM) \\ @ DNAqua-net COST action}
-    {\href{http://dnaqua.net/}{DNAqua-net}}
-    {Project title \textit{A comparison of bioinformatic pipelines and sampling techniques to enable benchmarking of DNA metabarcoding}. \href{http://dnaqua.net/wp-content/uploads/2019/08/Zafeiropoulos.pdf}{Report.}}{}
+        \cvitem{2020}{Federation of European Microbiological Societies \\ Meeting Attendance Grant}
+        {\href{https://fems-microbiology.org/}{FEMS}}
+        {for joining the \textit{"Metagenomics, Metatranscript- omics and \\ 
+        multi ’omics for microbial community studies"} Physalia course}{}
+
+        \\
+        
+        \cvitem{2019}{Short Term Scientific Mission (STSM) \\ @ DNAqua-net COST action}
+        {\href{http://dnaqua.net/}{DNAqua-net}}
+        {Project title \textit{A comparison of bioinformatic pipelines and sampling techniques to enable benchmarking of DNA metabarcoding}. \href{http://dnaqua.net/wp-content/uploads/2019/08/Zafeiropoulos.pdf}{Report.}}{}
 
 
-    \\
-    
-    \cvitem{2018}{Best Poster Award @ Hellenic Bioinformatics conference}
-    {\href{https://hscbio.wordpress.com/}{HBIO}}
-    {for \textit{PEMA: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
-    
-\end{cvtable}
+        \\
+        
+        \cvitem{2018}{Best Poster Award @ Hellenic Bioinformatics conference}
+        {\href{https://hscbio.wordpress.com/}{HBIO}}
+        {for \textit{PEMA: a Pipeline for Environmental DNA Metabarcoding Analysis}}{}
+        
+    \end{cvtable}
 
 
 
 \cvsection{References}
-\begin{cvtable}
+
+    \begin{cvtable}
 
 
-    \cvitemshort{\href{http://msysbiology.com}{Karoline Faust}}
-        {Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven
-        Leuven, 3000, Leuven, Belgium
-        \\ 
-        \faPhone: +3216322698 | 
-        \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}}
-      
-    \\ 
-
-
-    \cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
-        {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
-       % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
-        ),
-        Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
-        \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
+        \cvitemshort{\href{http://msysbiology.com}{Karoline Faust}}
+            {Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven
+            Leuven, 3000, Leuven, Belgium
+            \\ 
+            \faPhone: +3216322698 | 
+            \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}}
         
-    \\
-      
-    % \cvitemshort{\href{https://ladoukakis.weebly.com/}{Emmanuel D. Ladoukakis}}
-    %     {Biology Department, University of Crete,
-    %     Voutes University Campus, Iraklio, GR 70013 Biology building, 3rd floor, Office: 316a 
-    %     \\ 
-    %     \faPhone: +30 2810394067 | 
-    %     \faAt: \href{mailto:ladoukakis@biology.uoc.gr}{ladoukakis@biology.uoc.gr}}
-      
-    % \\ 
-
-    
-    % \cvitemshort{\href{https://who.paris.inria.fr/Elias.Tsigaridas/}{Elias Tsigaridas}}
-    %     {Institut de Mathématiques de Jussieu - Paris Rive Gauche, Sorbonne Université - Campus Pierre et Marie Curie, Case courrier 247, 4, place Jussieu, 75252, Paris Cedex 05, France \\ 
-    %     \faPhone: +33 014427 8539 | \faAt: \href{mailto: elias.tsigaridas@inria.fr}{elias.tsigaridas@inria.fr}}
-
-    % \\
+        \\ 
 
 
-    \cvitemshort{\href{https://imbbc.hcmr.gr/user/kotoulas/}{Georgios Kotoulas}}
-        {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR) \\
-        Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
-        \faAt: \href{mailto:kotoulas@hcmr.gr}{kotoulas@hcmr.gr}} 
+        \cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
+            {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
+        % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
+            ),
+            Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
+            \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
+            
+        \\
+        
+        % \cvitemshort{\href{https://ladoukakis.weebly.com/}{Emmanuel D. Ladoukakis}}
+        %     {Biology Department, University of Crete,
+        %     Voutes University Campus, Iraklio, GR 70013 Biology building, 3rd floor, Office: 316a 
+        %     \\ 
+        %     \faPhone: +30 2810394067 | 
+        %     \faAt: \href{mailto:ladoukakis@biology.uoc.gr}{ladoukakis@biology.uoc.gr}}
+        
+        % \\ 
+
+        
+        % \cvitemshort{\href{https://who.paris.inria.fr/Elias.Tsigaridas/}{Elias Tsigaridas}}
+        %     {Institut de Mathématiques de Jussieu - Paris Rive Gauche, Sorbonne Université - Campus Pierre et Marie Curie, Case courrier 247, 4, place Jussieu, 75252, Paris Cedex 05, France \\ 
+        %     \faPhone: +33 014427 8539 | \faAt: \href{mailto: elias.tsigaridas@inria.fr}{elias.tsigaridas@inria.fr}}
+
+        % \\
 
 
-    % \cvitemshort{\href{http://computational-genomics.weebly.com/}{Christoforos Nikolaou}}
-    %     {Department of Biology, University of Crete, Gennimata 34,71305, Heraklion, Crete, Greece \\ 
-    %     \faAt: \href{mailto:cnikolaou@fleming.gr}{cnikolaou@fleming.gr}}
+        \cvitemshort{\href{https://imbbc.hcmr.gr/user/kotoulas/}{Georgios Kotoulas}}
+            {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR) \\
+            Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
+            \faAt: \href{mailto:kotoulas@hcmr.gr}{kotoulas@hcmr.gr}} 
 
 
-\end{cvtable}
+        % \cvitemshort{\href{http://computational-genomics.weebly.com/}{Christoforos Nikolaou}}
+        %     {Department of Biology, University of Crete, Gennimata 34,71305, Heraklion, Crete, Greece \\ 
+        %     \faAt: \href{mailto:cnikolaou@fleming.gr}{cnikolaou@fleming.gr}}
 
+
+    \end{cvtable}
+
+
+% Add sidebar in last page
+\makebacksidebar
 
 
 \end{document}
