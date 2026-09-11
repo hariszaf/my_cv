@@ -22,7 +22,15 @@ To compile the greek version:
 latexmk -xelatex zafeiropoulos_cv_greek.tex
 ```
 
+Make sure you have the following LaTeX packages:
 
+`ClearSans`
+`graphbox`
+`fontawesome5`
+`academicons`
+`xhfill`
+`xhfill`
+`smartdiagram`
 
 
 Forty Seconds CV

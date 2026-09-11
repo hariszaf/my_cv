@@ -26,8 +26,9 @@
     a4paper,
 ]{../fortysecondscv}
 
-% improve word spacing and hyphenation
-\usepackage{microtype}
+% improve word spacing and hyphenation; disable font expansion because the
+% document may use bitmap fonts, for which pdfTeX cannot apply expansion.
+\usepackage[expansion=false]{microtype}
 \usepackage{ragged2e}
 
 % uncomment in case you don't want any hyphenation
@@ -68,7 +69,7 @@
 
 % for including national flags
 \usepackage[backend=biber,style=authoryear,sorting=ydnt]{biblatex}
-\addbibresource{my_publications.bib}
+\addbibresource{../bibs/my_publications.bib}
 
 \usepackage{everypage}
 \newcommand{\drawsidebar}{%
@@ -150,14 +151,6 @@
             \social{\faResearchgate}
                 {https://www.researchgate.net/profile/Haris-Zafeiropoulos}
                 {ResearchGate Profile}
-
-            % \social{\faSkype}
-            %     {haris.zaf2}
-            %     {haris.zaf2}
-
-            % \social{\faTwitter}
-            %     {https://twitter.com/haris_zaf}
-            %     {@haris\_zaf}
 
             % \social{\faBlueSky}
             %     {https://orcid.org/0000-0002-1825-0097}
@@ -256,41 +249,52 @@
 
 \cvsection{Research projects - working experience}
 
+\cvsubsection{Current Employment status}
+
+   \begin{cvtable}[3]
+
+        \cvitem{2026 - ongoing}{\href{https://m3i-lab.github.io/}{Predicting facultatives}}{Post-doc}
+        {
+            Recently, I joined the Cluster of Excellence "Balance of the Microverse" and the "Mechanisms of microbial metabolic interactions (m3i)" lab, led by Dr. Zimmermann, at the Friedrich Schiller University of Jena. 
+            \textbf{My role} will be to investigate machine learning approaches for accurate prediction of facultative bacterial taxa based on their genomes. 
+            Moreover, I will further develop metabolic modeling based methods for microbial interactions inference.
+        }
+    \end{cvtable}
+
 
 \cvsubsection{Formal Employment Projects}
 
     \begin{cvtable}[3]
 
         \cvitem{2022 - 2026}{\href{https://3domics.eu}{3D'omics}}{Post-doc}
-        {Aim of the project is to come up with technology and protocols to generate 3D omics landscapes,
-        achieving reconstructions of intestinal host microbiota ecosystems.
-        My role on the project is the analysis of microbial networks integrating spatial and metabolic data 
-        to predict species interactions and/or influence of metabolites on species distributions
-        using co-occurrence network analysis and Genome-Scale Metabolic Modeling.
+        {
+            Aim of the project is to come up with technology and protocols to generate 3D omics landscapes, achieving reconstructions of intestinal host microbiota ecosystems.
+            \textbf{My role} on the project is the analysis of microbial networks integrating spatial and metabolic data to predict species interactions and/or influence of metabolites on species distributions using co-occurrence network analysis and Genome-Scale Metabolic Modeling.
         }
 
         \cvitem{2022 - 2022}{\href{https://imbbc.hcmr.gr/project/eosc-life-gos/}{
             A workflow for marine Genomic Observatories data analysis}}{Research associate}
-            {An \href{https://www.eosc-life.eu}{EOSC-Life}-supported project aimed at making the large volumes of 
-            data produced by genomic observatories more easily interpretable by providing the taxonomic inventories 
-            of each sample in a timely and non-technical format. I was the lead developer of the delivered workflow, 
-            and the Principal Investigator in the second half of the project.
+            {
+                An \href{https://www.eosc-life.eu}{EOSC-Life}-supported project aimed at making large volumes of sequencing data produced by genomic observatories easier to interpret providing taxonomic inventories in a timely and non-technical format. 
+                \textbf{My role} was the main developer of the workflow, and the Principal Investigator in the second half of the project.
         }
 
         \cvitem{2018 - 2021}{\href{http://prego.hcmr.gr/}{PREGO: Process, environment, organism (PREGO)}}{PhD}
-            {PREGO is a systems-biology approach to elucidate ecosystem function at the microbial dimension.
-            PREGO was the main project of my PhD and my role was to develop the data integration parts of the platform.
-        }
+            {
+                PREGO is a systems-biology approach to elucidate ecosystem function at the microbial dimension.
+                PREGO was the main project of my PhD and \textbf{my role} was to develop the data integration parts of the platform.
+            }
         
         \cvitem{2019 -- present}{\href{https://elixir-greece.org}{ELIXIR–GR}}{technical support}
-            {ELIXIR-GR is the Greek National Node of the ESFRI \href{https://elixir-europe.org/}{European RI ELIXIR}, 
-            a distributed e-Infrastructure aiming at the construction of a sustainable European infrastructure for biological information.
-            My role on the project was to develop containerized-versions of various software tools.
+            {
+                ELIXIR-GR is the Greek National Node of the ESFRI \href{https://elixir-europe.org/}{European RI ELIXIR}, a distributed e-Infrastructure aiming at the construction of a sustainable European infrastructure for biological information.
+                \textbf{My role} on the project was to develop containerized-versions of various software tools.
         }
         
         \cvitem{2018 - 2020}{\href{https://reconnect.hcmr.gr/}{RECONNECT}}{PhD}
-            {RECONNECT is an Interreg V-B "Balkan-Mediterranean 2014-2020" project. It aims to develop strategies 
-            for sustainable management of Marine Protected Areas (MPAs) and Natura 2000 sites.
+            {RECONNECT is an Interreg V-B "Balkan-Mediterranean 2014-2020" project. 
+            It aims to develop strategies for sustainable management of Marine Protected Areas (MPAs) and Natura 2000 sites.
+            \textbf{My role} was to conduct amplicon analysis for microbial communities.
         }
 
     \end{cvtable}
@@ -319,16 +323,11 @@
                 I have been maintaining the workflow to address the needs of the infrastructure.
         }
 
-
-
     \end{cvtable}
 
 
-
-
-
 %  -----------------------------------------------------------------------
-\newpage
+% \newpage
 \makemoresidebar
 % \makebacksidebar
 
@@ -536,21 +535,31 @@
 
 
         \cvitemshort{\href{http://msysbiology.com}{Karoline Faust}}
-            {Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven
-            Leuven, 3000, Leuven, Belgium
-            \\ 
-            \faPhone: +3216322698 | 
-            \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}}
+            {
+                Department of Microbiology, Immunology and Transplantation, Rega Institute for Medical Research, Laboratory of Molecular Bacteriology, KU Leuven.\\
+                Leuven, 3000, Leuven, Belgium
+                \\ 
+                \faPhone: +3216322698 | 
+                \faAt: \href{mailto:karoline.faust@kuleuven.be}{karoline.faust@kuleuven.be}
+            }
         
         \\ 
 
+        \cvitemshort{\href{https://m3i-lab.github.io/people/johannes.html}{Johanens Zimmermann}}
+            {
+                Cluster of Excellence Balance of the Microverse, Friedrich Schiller University Jena. \\
+                Rosalind-Franklin-Str. 5, 07745 Jena, Germany,
+                Floor 1, Room 1033, \\ 
+                \faPhone: +49(0)3641-9-49786 | 
+                \faAt: \href{mailto:johannes.zimmermann@uni-jena.de}{johannes.zimmermann@uni-jena.de}
+            }
 
-        \cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
-            {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
-        % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
-            ),
-            Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
-            \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
+        % \cvitemshort{\href{http://lab42open.hcmr.gr/people/evangelospafilis/}{Pafilis Evangelos}}
+        %     {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR
+        % % {\href{https://imbbc.hcmr.gr/}{IMBBC HCMR}}
+        %     ),
+        %     Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
+        %     \faAt: \href{mailto:pafilis@hcmr.gr}{pafilis@hcmr.gr}}
             
         \\
         
@@ -572,9 +581,12 @@
 
 
         \cvitemshort{\href{https://imbbc.hcmr.gr/user/kotoulas/}{Georgios Kotoulas}}
-            {Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR) \\
-            Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ \faPhone: +30 2810 337740 | 
-            \faAt: \href{mailto:kotoulas@hcmr.gr}{kotoulas@hcmr.gr}} 
+            {
+                Institute of Marine Biology, Biotechnology \& Aquaculture, Hellenic Centre for Marine Research, (IMBBC - HCMR) \\
+                Gournes, Pediados, P.O. Box 2214, Heraklion Crete 71003, Greece \\ 
+                \faPhone: +30 2810 337740 | 
+                \faAt: \href{mailto:kotoulas@hcmr.gr}{kotoulas@hcmr.gr}
+            } 
 
 
         % \cvitemshort{\href{http://computational-genomics.weebly.com/}{Christoforos Nikolaou}}
