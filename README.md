@@ -1,4 +1,4 @@
-## Structure 
+## multipage-cv 
 
 Under the `bibs/` folder, I have `.bib` files with the raw info of my cv. 
 
@@ -17,6 +17,14 @@ To `generate_tex_tables.py`, just run:
 ```
 
 
+To compile the english version, move to [multi-page-CV](./multi-page-CV/) and run:
+```
+make
+```
+The [`Makefile`](./multi-page-CV/Makefile) is then gonna run and build the `.pdf`.
+
+
+
 To compile the greek version:
 ```
 latexmk -xelatex zafeiropoulos_cv_greek.tex
@@ -31,6 +39,21 @@ Make sure you have the following LaTeX packages:
 `xhfill`
 `xhfill`
 `smartdiagram`
+
+
+
+## Cover-letters
+
+Write your letter in a new `.tex` file, e.g. [cat2025.tex](./cover-letters/cat2025.tex), 
+and then provide the filename of your new `.tex` on the [`main.tex`](./cover-letters/main.tex) 
+on the `\input` command (line 126).
+
+
+```
+cd cover-letters
+./build-letter.sh <cover.tex>
+```
+
 
 
 Forty Seconds CV

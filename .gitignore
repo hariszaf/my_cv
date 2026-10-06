@@ -13,3 +13,6 @@
 
 .vscode/
 cover-letters/main.pdf
+
+# Ignore build directory; this works across all repo
+build/
